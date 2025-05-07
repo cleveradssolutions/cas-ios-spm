@@ -68,59 +68,55 @@ let package = Package(
             name: "CASAppLovinAdapterWrapper",
             dependencies: [
                 .target(name: "CASWrapper"),
-                .target(name: "CASAppLovinAdapterWrapper"),
-                .product(name: "CASAppLovinAdapter", package: "AppLovin-MAX-Swift-Package")
+                .product(name: "AppLovinSDK", package: "AppLovin-MAX-Swift-Package")
             ]
         ),
         .target(
             name: "CASGoogleAdsAdapterWrapper",
             dependencies: [
                 .target(name: "CASWrapper"),
-                .target(name: "CASGoogleAdsAdapterWrapper"),
-                .product(name: "CASGoogleAdsAdapter", package: "swift-package-manager-google-mobile-ads")
+                .product(name: "GoogleMobileAds", package: "swift-package-manager-google-mobile-ads")
             ]
         ),
         .target(
             name: "CASVungleAdapterWrapper",
             dependencies: [
                 .target(name: "CASWrapper"),
-                .target(name: "CASVungleAdapterWrapper"),
-                .product(name: "CASVungleAdapter", package: "VungleAdsSDK-SwiftPackageManager")
+                .product(name: "VungleAdsSDK", package: "VungleAdsSDK-SwiftPackageManager")
             ]
         ),
         .target(
             name: "CASMintegralAdapterWrapper",
             dependencies: [
                 .target(name: "CASWrapper"),
-                .target(name: "CASMintegralWrapper"),
-                .product(name: "CASMintegralAdapter", package: "MintegralAdSDK-Swift-Package")
+                .product(name: "MintegralAdSDK", package: "MintegralAdSDK-Swift-Package")
             ]
         ),
         
         .binaryTarget(
             name: "CASAdapter",
-            url: "https://github.com/cleveradssolutions/CAS-iOS/releases/download/4.0.1-rc5/CleverAdsSolutions.zip",
-            checksum: "f42fbc92bfa5a718ab6dff0a42d332f39b277a0b8f3b416747cb5164bfa9337e"
+            url: "https://github.com/shumakovd/spm-test/releases/download/v1.0.0/CleverAdsSolutionsBase.zip",
+            checksum: "c8107d77e44652b436f5f3ab86ba5d610445994dd4b7eab0cc09b9a14e355c2b"
         ),
         .binaryTarget(
             name: "CASAppLovinAdapter",
-            url: "https://github.com/cleveradssolutions/CAS-iOS/releases/download/4.0.2/CASMediationAppLovin-13.2.0.0.zip",
-            checksum: "1af2e851c6cade940065510ac438e3d889a417728af6533dbce22f814f7c9cff"
+            url: "https://github.com/shumakovd/spm-test/releases/download/v1.0.0/CASMediationAppLovin-13.2.0.0.zip",
+            checksum: "43a299a44215908be55cf1f7e9d9f243b48b0da87a1ad3f49ce0c068f65ab4dd"
         ),
         .binaryTarget(
             name: "CASGoogleAdsAdapter",
-            url: "https://github.com/cleveradssolutions/CAS-iOS/releases/download/4.0.2/CASMediationGoogleAds-12.3.0.0.zip",
-            checksum: "cb4bf36730e0647d65f5b207a33dcb81fb09e25ac159ec4740fc8ac4f5d9ca49"
+            url: "https://github.com/shumakovd/spm-test/releases/download/v1.0.0/CASMediationGoogleAds-12.3.0.0.zip",
+            checksum: "a84fc80ab3cfc7ebacc120ee901decccc0fa90b6d0036c4a4f1c1af3ed4a452b"
         ),
         .binaryTarget(
             name: "CASVungleAdapter",
-            url: "https://github.com/cleveradssolutions/CAS-iOS/releases/download/4.0.2/CASMediationLiftoffMonetize-7.5.0.0.zip",
-            checksum: "7f811e73e52d877c518314c31ad358d8a3e50eb6aed30c1c0bbdddf5abe0fcef"
+            url: "https://github.com/shumakovd/spm-test/releases/download/v1.0.0/CASMediationLiftoffMonetize-7.5.0.0.zip",
+            checksum: "5a985973b460e7ef70977ca9dca5f1fcbe607048de585597658a5788dcdc754e"
         ),
         .binaryTarget(
             name: "CASMintegralAdapter",
-            url: "https://github.com/cleveradssolutions/CAS-iOS/releases/download/4.0.2/CASMediationMintegral-7.7.7.0.zip",
-            checksum: "0b31b7672c6ff45776f98270ff836a9f307028fb4b55b013ec7efd67dfd79c27"
+            url: "https://github.com/shumakovd/spm-test/releases/download/v1.0.0/CASMediationMintegral-7.7.7.0.zip",
+            checksum: "3717de567f4ced2f9a93b5047da5fa4315ee3f90a3223d90d6836372cf30a3d0"
         )
     ]
 )

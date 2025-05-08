@@ -103,25 +103,8 @@ let package = Package(
         .target(
             name: "CASMediationIronSourceTarget",
             dependencies: [
-                .target(name: "CASMediationIronSource"),
+                .target(name: "IronSourceTarget"),
                 .target(name: "CleverAdsSolutionsTarget")
-            ],
-            linkerSettings: [
-                .linkedFramework("AdSupport"),
-                .linkedFramework("AudioToolbox"),
-                .linkedFramework("AVFoundation"),
-                .linkedFramework("CFNetwork"),
-                .linkedFramework("CoreGraphics"),
-                .linkedFramework("CoreMedia"),
-                .linkedFramework("CoreTelephony"),
-                .linkedFramework("CoreVideo"),
-                .linkedFramework("Foundation"),
-                .linkedFramework("MobileCoreServices"),
-                .linkedFramework("QuartzCore"),
-                .linkedFramework("Security"),
-                .linkedFramework("StoreKit"),
-                .linkedFramework("SystemConfiguration"),
-                .linkedLibrary("z")
             ]
         ),
         

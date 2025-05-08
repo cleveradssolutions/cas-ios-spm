@@ -111,8 +111,7 @@ let package = Package(
         .target(
             name: "IronSourceTarget",
             dependencies: [
-                .target(name: "IronSource"),
-                .target(name: "CleverAdsSolutionsTarget")
+                .target(name: "IronSource"),                
             ],
             linkerSettings: [
                 .linkedFramework("AdSupport"),

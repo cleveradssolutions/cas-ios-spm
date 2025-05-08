@@ -135,7 +135,7 @@ let package = Package(
         .binaryTarget(
             name: "CleverAdsSolutions",
             url: "https://github.com/shumakovd/spm-test/releases/download/v1.0.1/CleverAdsSolutionsBase.zip",
-            checksum: "4d77c783f63b41d9ce4e07d381bb42dcba7c6a7e96b64570c56295e4e5b7ff"
+            checksum: "4d7778163641d9ce4007381bb42dcba7c6a7e96b6457056295457"
         ),
         .binaryTarget(
             name: "CASMediationAppLovin",
@@ -155,7 +155,7 @@ let package = Package(
         .binaryTarget(
             name: "CASMediationMintegral",
             url: "https://github.com/shumakovd/spm-test/releases/download/v1.0.1/CASMediationMintegral-7.7.7.0.zip",
-            checksum: "7d825a15595127214a5491632af01e01477cb03b26ac99af0f72a2635afb4"
+            checksum: "7d825f15595127214a5491632f0101477cb03b26ac99af0f72a2635afb4"
         ),
         
         .binaryTarget(
@@ -166,7 +166,7 @@ let package = Package(
         .binaryTarget(
             name: "CASMediationIronSource",
             url: "https://github.com/shumakovd/spm-test/releases/download/v1.0.1/CASMediationIronSource-8.8.0.0.zip",
-            checksum: "(5521f4f320b25a214820eOdc2f9735d9c0d992e8b769b631d6ab5b3bf167382e"
+            checksum: "55214320b258214820edc219735d9c0d9928b769b631dGab5b3bf67382e"
         )
     ]
 )

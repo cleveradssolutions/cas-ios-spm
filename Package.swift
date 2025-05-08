@@ -135,27 +135,27 @@ let package = Package(
         .binaryTarget(
             name: "CleverAdsSolutions",
             url: "https://github.com/shumakovd/spm-test/releases/download/v1.0.1/CleverAdsSolutionsBase.zip",
-            checksum: "9eef43a2021c44db6c70c31676d72c0744e3793148fd78031fcafbf549854c47"
+            checksum: "4d77c783f63b41d9ce4e07d381bb42dcba7c6a7e96b64570c56295e4e5b7ff"
         ),
         .binaryTarget(
             name: "CASMediationAppLovin",
             url: "https://github.com/shumakovd/spm-test/releases/download/v1.0.1/CASMediationAppLovin-13.2.0.0.zip",
-            checksum: "da07b04c7efe838081d4c354994ad8cfbf11b3bea03163648f1aebae7c98f41f"
+            checksum: "28f002ab176a583b2301670d3077798c8baef63e5c8391a5c9b6727811264dd5"
         ),
         .binaryTarget(
             name: "CASMediationGoogleAds",
             url: "https://github.com/shumakovd/spm-test/releases/download/v1.0.1/CASMediationGoogleAds-12.3.0.0.zip",
-            checksum: "1a8618f5c2d2aba07c63a0b9c76178cf6111b27ac605f15b57a3d3981e1f6f87"
+            checksum: "fbd12c912ef589d85e6c6089ab3a9131d9ae4c500cb3fa3c6a8500b37a144d53"
         ),
         .binaryTarget(
             name: "CASMediationVungle",
             url: "https://github.com/shumakovd/spm-test/releases/download/v1.0.1/CASMediationLiftoffMonetize-7.5.0.0.zip",
-            checksum: "6ca0d55a81937e7a3e5ebae28c2f4ece695f6c799f352d2c54960776c976578b"
+            checksum: "fc8841ba1af0a6ef824972c814051d312cb70ae587c3bd826add52fa615241f2"
         ),
         .binaryTarget(
             name: "CASMediationMintegral",
             url: "https://github.com/shumakovd/spm-test/releases/download/v1.0.1/CASMediationMintegral-7.7.7.0.zip",
-            checksum: "646a9eab663b0af855b50772613b952df5f1c74f6c91dbdfc0d8844e51d66cfc"
+            checksum: "7d825a15595127214a5491632af01e01477cb03b26ac99af0f72a2635afb4"
         ),
         
         .binaryTarget(
@@ -166,7 +166,7 @@ let package = Package(
         .binaryTarget(
             name: "CASMediationIronSource",
             url: "https://github.com/shumakovd/spm-test/releases/download/v1.0.1/CASMediationIronSource-8.8.0.0.zip",
-            checksum: "ef4f39bd52d879129a89ce78c74350cf0056391edb2cac698563ce7a84e47bd4"
+            checksum: "(5521f4f320b25a214820eOdc2f9735d9c0d992e8b769b631d6ab5b3bf167382e"
         )
     ]
 )

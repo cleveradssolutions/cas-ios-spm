@@ -33,6 +33,10 @@ let package = Package(
             name: "CASMediationIronSource",
             targets: ["CASMediationIronSourceTarget"]
         ),
+        .library(
+            name: "IronSource",
+            targets: ["IronSourceTarget"]
+        ),
     ],
         
     dependencies: [
@@ -99,7 +103,7 @@ let package = Package(
         .target(
             name: "CASMediationIronSourceTarget",
             dependencies: [
-                .target(name: "IronSource"),
+                .target(name: "IronSourceTarget"),
                 .target(name: "CASMediationIronSource"),
                 .target(name: "CleverAdsSolutionsTarget")
             ],
@@ -149,14 +153,14 @@ let package = Package(
         ),
         
         .binaryTarget(
-            name: "IronSource",
+            name: "IronSourceTarget",
             url: "https://github.com/ironsource-mobile/iOS-sdk/raw/master/8.8.0/IronSource8.8.0.zip",
             checksum: "e278dded76ed9cb23bc0b51ffce134dd5dc75572e84deeeeae053f07fe77d806"
         ),
         .binaryTarget(
             name: "CASMediationIronSource",
-            url: "https://github.com/ironsource-mobile/iOS-sdk/raw/master/8.8.0/IronSource8.8.0.zip",
-            checksum: "e278dded76ed9cb23bc0b51ffce134dd5dc75572e84deeeeae053f07fe77d806"
+            url: "https://github.com/shumakovd/spm-test/releases/download/v1.0.0/CASMediationIronSource-8.8.0.0.zip",
+            checksum: "d247cb44e7420710339e62db916499e67ecdf738b653fbeb6ecd59ebb8063542"
         )
     ]
 )

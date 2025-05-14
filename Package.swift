@@ -156,7 +156,7 @@ let package = Package(
         .binaryTarget(
             name: "CASMediationMintegral",
             url: "https://github.com/shumakovd/spm-test/releases/download/v1.0.4/CASMediationMintegral-7.7.7.0.zip",
-            checksum: "6ac08ec9f80311849bc8864cde568ded4def258691bb94ca0a8fb98314f1f75f"
+            checksum: "def4c35436c21505f6185b0e3d54197aaba29a850c7948adff95917de9953c53"
         )
         
 //        .binaryTarget(

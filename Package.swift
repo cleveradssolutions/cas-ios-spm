@@ -96,6 +96,7 @@ let package = Package(
         .target(
             name: "CASMediationMintegralTarget",
             dependencies: [
+                .target(name: "CASMediationMintegral"),
                 .target(name: "CleverAdsSolutionsTarget"),
                 .product(name: "MintegralAdSDK", package: "MintegralAdSDK-Swift-Package")
             ]

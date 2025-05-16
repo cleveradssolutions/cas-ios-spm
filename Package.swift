@@ -29,21 +29,21 @@ let package = Package(
             name: "CASMediationMintegral",
             targets: ["CASMediationMintegralTarget"]
         ),
-        .library(
-            name: "CASMediationIronSource",
-            targets: ["CASMediationIronSourceTarget"]
-        ),
-        .library(
-            name: "IronSource",
-            targets: ["IronSourceTarget"]
-        ),
+//        .library(
+//            name: "CASMediationIronSource",
+//            targets: ["CASMediationIronSourceTarget"]
+//        ),
+//        .library(
+//            name: "IronSource",
+//            targets: ["IronSourceTarget"]
+//        ),
     ],
     
     dependencies: [
-        .package(url: "https://github.com/AppLovin/AppLovin-MAX-Swift-Package", from: "13.2.0"),
-        .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads", from: "12.3.0"),
-        .package(url: "https://github.com/Vungle/VungleAdsSDK-SwiftPackageManager", from: "7.4.5"),
-        .package(url: "https://github.com/Mintegral-official/MintegralAdSDK-Swift-Package", from: "7.7.7")
+        .package(url: "https://github.com/AppLovin/AppLovin-MAX-Swift-Package", exact: "13.2.0"),
+        .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads", exact: "12.3.0"),
+        .package(url: "https://github.com/Vungle/VungleAdsSDK-SwiftPackageManager", exact: "7.4.5"),
+        .package(url: "https://github.com/Mintegral-official/MintegralAdSDK-Swift-Package", exact: "7.7.7")
     ],
     
     targets: [
@@ -51,6 +51,9 @@ let package = Package(
             name: "CleverAdsSolutionsTarget",
             dependencies: [
                 .target(name: "CleverAdsSolutions")
+            ],
+            resources: [
+                .process("Resources")
             ],
             linkerSettings: [
                 .linkedFramework("AVFoundation"),
@@ -104,38 +107,38 @@ let package = Package(
                 .product(name: "MintegralAdSDK", package: "MintegralAdSDK-Swift-Package")
             ]
         ),
-        .target(
-            name: "CASMediationIronSourceTarget",
-            dependencies: [
-                .target(name: "IronSourceTarget"),
-                .target(name: "CASMediationIronSource"),
-                .target(name: "CleverAdsSolutionsTarget")
-            ]
-        ),
-        
-        .target(
-            name: "IronSourceTarget",
-            dependencies: [
-                .target(name: "IronSource")
-            ],
-            linkerSettings: [
-                .linkedFramework("AdSupport"),
-                .linkedFramework("AudioToolbox"),
-                .linkedFramework("AVFoundation"),
-                .linkedFramework("CFNetwork"),
-                .linkedFramework("CoreGraphics"),
-                .linkedFramework("CoreMedia"),
-                .linkedFramework("CoreTelephony"),
-                .linkedFramework("CoreVideo"),
-                .linkedFramework("Foundation"),
-                .linkedFramework("MobileCoreServices"),
-                .linkedFramework("QuartzCore"),
-                .linkedFramework("Security"),
-                .linkedFramework("StoreKit"),
-                .linkedFramework("SystemConfiguration"),
-                .linkedLibrary("z")
-            ]
-        ),
+//        .target(
+//            name: "CASMediationIronSourceTarget",
+//            dependencies: [
+//                .target(name: "IronSourceTarget"),
+//                .target(name: "CASMediationIronSource"),
+//                .target(name: "CleverAdsSolutionsTarget")
+//            ]
+//        ),
+//        
+//        .target(
+//            name: "IronSourceTarget",
+//            dependencies: [
+//                .target(name: "IronSource")
+//            ],
+//            linkerSettings: [
+//                .linkedFramework("AdSupport"),
+//                .linkedFramework("AudioToolbox"),
+//                .linkedFramework("AVFoundation"),
+//                .linkedFramework("CFNetwork"),
+//                .linkedFramework("CoreGraphics"),
+//                .linkedFramework("CoreMedia"),
+//                .linkedFramework("CoreTelephony"),
+//                .linkedFramework("CoreVideo"),
+//                .linkedFramework("Foundation"),
+//                .linkedFramework("MobileCoreServices"),
+//                .linkedFramework("QuartzCore"),
+//                .linkedFramework("Security"),
+//                .linkedFramework("StoreKit"),
+//                .linkedFramework("SystemConfiguration"),
+//                .linkedLibrary("z")
+//            ]
+//        ),
         
         .binaryTarget(
             name: "CleverAdsSolutions",
@@ -161,16 +164,16 @@ let package = Package(
             name: "CASMediationMintegral",
             url: "https://github.com/shumakovd/spm-test/releases/download/v1.0.8/CASMediationMintegral-7.7.7.0.zip",
             checksum: "1f110d07ea85674b093e305404ebd7327e8a4535799337800b8fcf1ea71a3146"
-        ),
-        .binaryTarget(
-            name: "IronSource",
-            url: "https://github.com/ironsource-mobile/iOS-sdk/raw/master/8.8.0/IronSource8.8.0.zip",
-            checksum: "e278dded76ed9cb23bc0b51ffce134dd5dc75572e84deeeeae053f07fe77d806"
-        ),
-        .binaryTarget(
-            name: "CASMediationIronSource",
-            url: "https://github.com/shumakovd/spm-test/releases/download/v1.0.8/CASMediationIronSource-8.8.0.0.zip",
-            checksum: "50e62783014206431f2050a372952033971d82e5104b6c71bee736c13976891e"
         )
+//        .binaryTarget(
+//            name: "IronSource",
+//            url: "https://github.com/ironsource-mobile/iOS-sdk/raw/master/8.8.0/IronSource8.8.0.zip",
+//            checksum: "e278dded76ed9cb23bc0b51ffce134dd5dc75572e84deeeeae053f07fe77d806"
+//        ),
+//        .binaryTarget(
+//            name: "CASMediationIronSource",
+//            url: "https://github.com/shumakovd/spm-test/releases/download/v1.0.8/CASMediationIronSource-8.8.0.0.zip",
+//            checksum: "50e62783014206431f2050a372952033971d82e5104b6c71bee736c13976891e"
+//        )
     ]
 )

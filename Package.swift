@@ -52,9 +52,9 @@ let package = Package(
             dependencies: [
                 .target(name: "CleverAdsSolutions")
             ],
-//            resources: [
-//                .process("Resources")
-//            ],
+            resources: [
+                .process("Resources")
+            ],
             linkerSettings: [
                 .linkedFramework("AVFoundation"),
                 .linkedFramework("AdSupport"),

@@ -17,18 +17,18 @@ let package = Package(
 //            name: "CASMediationAppLovin",
 //            targets: ["CASMediationAppLovinTarget"]
 //        ),
-//        .library(
-//            name: "CASMediationGoogleAds",
-//            targets: ["CASMediationGoogleAdsTarget"]
-//        ),
+        .library(
+            name: "CASMediationGoogleAds",
+            targets: ["CASMediationGoogleAdsTarget"]
+        ),
 //        .library(
 //            name: "CASMediationVungle",
 //            targets: ["CASMediationVungleTarget"]
 //        ),
-        .library(
-            name: "CASMediationMintegral",
-            targets: ["CASMediationMintegralTarget"]
-        ),
+//        .library(
+//            name: "CASMediationMintegral",
+//            targets: ["CASMediationMintegralTarget"]
+//        ),
 //        .library(
 //            name: "CASMediationIronSource",
 //            targets: ["CASMediationIronSourceTarget"]
@@ -42,8 +42,8 @@ let package = Package(
     dependencies: [
         // .package(url: "https://github.com/AppLovin/AppLovin-MAX-Swift-Package", exact: "13.2.0"),
         // .package(url: "https://github.com/Vungle/VungleAdsSDK-SwiftPackageManager", exact: "7.4.5"),
-        .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads", exact: "12.3.0"),
-        .package(url: "https://github.com/Mintegral-official/MintegralAdSDK-Swift-Package", exact: "7.7.7")
+        .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads", exact: "12.3.0")
+        // .package(url: "https://github.com/Mintegral-official/MintegralAdSDK-Swift-Package", exact: "7.7.7")
     ],
     
     targets: [
@@ -83,14 +83,14 @@ let package = Package(
 //                .product(name: "AppLovinSDK", package: "AppLovin-MAX-Swift-Package")
 //            ]
 //        ),
-//        .target(
-//            name: "CASMediationGoogleAdsTarget",
-//            dependencies: [
-//                .target(name: "CASMediationGoogleAds"),
-//                .target(name: "CleverAdsSolutionsTarget"),
-//                .product(name: "GoogleMobileAds", package: "swift-package-manager-google-mobile-ads")
-//            ]
-//        ),
+        .target(
+            name: "CASMediationGoogleAdsTarget",
+            dependencies: [
+                .target(name: "CASMediationGoogleAds"),
+                .target(name: "CleverAdsSolutionsTarget"),
+                .product(name: "GoogleMobileAds", package: "swift-package-manager-google-mobile-ads")
+            ]
+        ),
 //        .target(
 //            name: "CASMediationVungleTarget",
 //            dependencies: [
@@ -99,14 +99,14 @@ let package = Package(
 //                .product(name: "VungleAdsSDK", package: "VungleAdsSDK-SwiftPackageManager")
 //            ]
 //        ),
-        .target(
-            name: "CASMediationMintegralTarget",
-            dependencies: [
-                .target(name: "CASMediationMintegral"),
-                .target(name: "CleverAdsSolutionsTarget"),
-                .product(name: "MintegralAdSDK", package: "MintegralAdSDK-Swift-Package")
-            ]
-        ),
+//        .target(
+//            name: "CASMediationMintegralTarget",
+//            dependencies: [
+//                .target(name: "CASMediationMintegral"),
+//                .target(name: "CleverAdsSolutionsTarget"),
+//                .product(name: "MintegralAdSDK", package: "MintegralAdSDK-Swift-Package")
+//            ]
+//        ),
 //        .target(
 //            name: "CASMediationIronSourceTarget",
 //            dependencies: [

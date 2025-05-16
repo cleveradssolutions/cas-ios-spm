@@ -150,21 +150,21 @@ let package = Package(
 //            url: "https://github.com/shumakovd/spm-test/releases/download/v1.0.9/CASMediationAppLovin-13.2.0.0.zip",
 //            checksum: "a2980c464b938389d4c04a9ca8ecd5ec459aa3a00c7f7e1665d656f0d7177dd3"
 //        ),
-//        .binaryTarget(
-//            name: "CASMediationGoogleAds",
-//            url: "https://github.com/shumakovd/spm-test/releases/download/v1.0.9/CASMediationGoogleAds-12.3.0.0.zip",
-//            checksum: "f0fe6da60aadf1318111dac46acd9528b1bc4398a994ebe77f0aabd78e98a23f"
-//        ),
+        .binaryTarget(
+            name: "CASMediationGoogleAds",
+            url: "https://github.com/shumakovd/spm-test/releases/download/v1.1.0/CASMediationGoogleAds-12.3.0.0.zip",
+            checksum: "49c419b80466cf23d1e32118266fdecbd64e6554b05a66693dab5794e4f74d8b"
+        ),
 //        .binaryTarget(
 //            name: "CASMediationVungle",
 //            url: "https://github.com/shumakovd/spm-test/releases/download/v1.0.9/CASMediationLiftoffMonetize-7.4.5.0.zip",
 //            checksum: "8f1d061eb05d1d34d0ff8289d9e9789788fddb6eb3f9843d42e7d485cccf099b"
 //        ),
-        .binaryTarget(
-            name: "CASMediationMintegral",
-            url: "https://github.com/shumakovd/spm-test/releases/download/v1.0.9/CASMediationMintegral-7.7.7.0.zip",
-            checksum: "985ea32a106f930a97be4944b7bb3323731311cad9eb788b2517285d7ca4fbd2"
-        )
+//        .binaryTarget(
+//            name: "CASMediationMintegral",
+//            url: "https://github.com/shumakovd/spm-test/releases/download/v1.0.9/CASMediationMintegral-7.7.7.0.zip",
+//            checksum: "985ea32a106f930a97be4944b7bb3323731311cad9eb788b2517285d7ca4fbd2"
+//        )
 //        .binaryTarget(
 //            name: "IronSource",
 //            url: "https://github.com/ironsource-mobile/iOS-sdk/raw/master/8.8.0/IronSource8.8.0.zip",

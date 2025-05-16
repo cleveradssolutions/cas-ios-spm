@@ -108,6 +108,7 @@ let package = Package(
             name: "CASMediationIronSourceTarget",
             dependencies: [
                 .target(name: "IronSourceTarget"),
+                .target(name: "CASMediationIronSource"),
                 .target(name: "CleverAdsSolutionsTarget")
             ]
         ),
@@ -115,7 +116,7 @@ let package = Package(
         .target(
             name: "IronSourceTarget",
             dependencies: [
-                .target(name: "IronSource"),                
+                .target(name: "IronSource")
             ],
             linkerSettings: [
                 .linkedFramework("AdSupport"),

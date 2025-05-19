@@ -13,14 +13,14 @@ let package = Package(
             name: "CleverAdsSolutions",
             targets: ["CleverAdsSolutionsTarget"]
         ),
-        .library(
-            name: "CASMediationAppLovin",
-            targets: ["CASMediationAppLovinTarget"]
-        ),
 //        .library(
-//            name: "CASMediationGoogleAds",
-//            targets: ["CASMediationGoogleAdsTarget"]
+//            name: "CASMediationAppLovin",
+//            targets: ["CASMediationAppLovinTarget"]
 //        ),
+        .library(
+            name: "CASMediationGoogleAds",
+            targets: ["CASMediationGoogleAdsTarget"]
+        ),
 //        .library(
 //            name: "CASMediationVungle",
 //            targets: ["CASMediationVungleTarget"]
@@ -40,9 +40,9 @@ let package = Package(
     ],
     
     dependencies: [
-        .package(url: "https://github.com/AppLovin/AppLovin-MAX-Swift-Package", exact: "13.2.0")
+        // .package(url: "https://github.com/AppLovin/AppLovin-MAX-Swift-Package", exact: "13.2.0"),
         // .package(url: "https://github.com/Vungle/VungleAdsSDK-SwiftPackageManager", exact: "7.4.5"),
-        // .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads", exact: "12.3.0"),
+        .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads", exact: "12.3.0")
         // .package(url: "https://github.com/Mintegral-official/MintegralAdSDK-Swift-Package", exact: "7.7.7")
     ],
     
@@ -75,22 +75,22 @@ let package = Package(
                 .linkedFramework("WebKit")
             ]
         ),
-        .target(
-            name: "CASMediationAppLovinTarget",
-            dependencies: [
-                .target(name: "CASMediationAppLovin"),
-                .target(name: "CleverAdsSolutionsTarget"),
-                .product(name: "AppLovinSDK", package: "AppLovin-MAX-Swift-Package")
-            ]
-        ),
 //        .target(
-//            name: "CASMediationGoogleAdsTarget",
+//            name: "CASMediationAppLovinTarget",
 //            dependencies: [
-//                .target(name: "CASMediationGoogleAds"),
+//                .target(name: "CASMediationAppLovin"),
 //                .target(name: "CleverAdsSolutionsTarget"),
-//                .product(name: "GoogleMobileAds", package: "swift-package-manager-google-mobile-ads")
+//                .product(name: "AppLovinSDK", package: "AppLovin-MAX-Swift-Package")
 //            ]
 //        ),
+        .target(
+            name: "CASMediationGoogleAdsTarget",
+            dependencies: [
+                .target(name: "CASMediationGoogleAds"),
+                .target(name: "CleverAdsSolutionsTarget"),
+                .product(name: "GoogleMobileAds", package: "swift-package-manager-google-mobile-ads")
+            ]
+        ),
 //        .target(
 //            name: "CASMediationVungleTarget",
 //            dependencies: [
@@ -145,16 +145,16 @@ let package = Package(
             url: "https://github.com/shumakovd/spm-test/releases/download/v1.0.8/CleverAdsSolutions.zip",
             checksum: "8c899e1e3d24a4c7afda579f579e6f366cc672ee66faa803a442bfa15e60a725"
         ),
-        .binaryTarget(
-            name: "CASMediationAppLovin",
-            url: "https://github.com/shumakovd/spm-test/releases/download/v1.1.9/CASMediationAppLovin-13.2.0.0.zip",
-            checksum: "1fb80b48b14e82b1bf6b1fa48e71fe4e6763ca7b5da61acbcefbc3e8a976789f"
-        ),
 //        .binaryTarget(
-//            name: "CASMediationGoogleAds",
-//            url: "https://github.com/shumakovd/spm-test/releases/download/v1.1.7/CASMediationGoogleAds-12.3.0.0.zip",
-//            checksum: "7aaf7deab159ca2cb8efbc8944cab8659ed7aba14aa518a60e74dce4586cdd55"
+//            name: "CASMediationAppLovin",
+//            url: "https://github.com/shumakovd/spm-test/releases/download/v1.1.9/CASMediationAppLovin-13.2.0.0.zip",
+//            checksum: "1fb80b48b14e82b1bf6b1fa48e71fe4e6763ca7b5da61acbcefbc3e8a976789f"
 //        ),
+        .binaryTarget(
+            name: "CASMediationGoogleAds",
+            url: "https://github.com/shumakovd/spm-test/releases/download/v1.2.0/CASMediationGoogleAds-12.3.0.0.zip",
+            checksum: "e1990a944c1a5f2d006b2df8e0c3bfa0ae766d830350574f4dedd4e34d862615"
+        ),
 //        .binaryTarget(
 //            name: "CASMediationVungle",
 //            url: "https://github.com/shumakovd/spm-test/releases/download/v1.0.9/CASMediationLiftoffMonetize-7.4.5.0.zip",

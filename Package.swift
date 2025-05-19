@@ -147,8 +147,8 @@ let package = Package(
         ),
         .binaryTarget(
             name: "CASMediationAppLovin",
-            url: "https://github.com/shumakovd/spm-test/releases/download/v1.1.8/CASMediationAppLovin-13.2.0.0.zip",
-            checksum: "9bdc9f595ac5d7465718785983d8309180f71e64f0bd7c27b62bf7838a4b961d"
+            url: "https://github.com/shumakovd/spm-test/releases/download/v1.1.9/CASMediationAppLovin-13.2.0.0.zip",
+            checksum: "1fb80b48b14e82b1bf6b1fa48e71fe4e6763ca7b5da61acbcefbc3e8a976789f"
         ),
 //        .binaryTarget(
 //            name: "CASMediationGoogleAds",

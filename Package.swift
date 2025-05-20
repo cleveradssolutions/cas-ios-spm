@@ -17,10 +17,10 @@ let package = Package(
 //            name: "CASMediationAppLovin",
 //            targets: ["CASMediationAppLovinTarget"]
 //        ),
-        .library(
-            name: "CASMediationGoogleAds",
-            targets: ["CASMediationGoogleAdsTarget"]
-        ),
+//        .library(
+//            name: "CASMediationGoogleAds",
+//            targets: ["CASMediationGoogleAdsTarget"]
+//        ),
 //        .library(
 //            name: "CASMediationVungle",
 //            targets: ["CASMediationVungleTarget"]
@@ -28,7 +28,7 @@ let package = Package(
         .library(
             name: "CASMediationMintegral",
             targets: ["CASMediationMintegralTarget"]
-        )
+        ),
 //        .library(
 //            name: "CASMediationIronSource",
 //            targets: ["CASMediationIronSourceTarget"]
@@ -42,7 +42,7 @@ let package = Package(
     dependencies: [
         // .package(url: "https://github.com/AppLovin/AppLovin-MAX-Swift-Package", exact: "13.2.0"),
         // .package(url: "https://github.com/Vungle/VungleAdsSDK-SwiftPackageManager", exact: "7.4.5"),
-        .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads", exact: "12.3.0"),
+        // .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads", exact: "12.3.0"),
         .package(url: "https://github.com/Mintegral-official/MintegralAdSDK-Swift-Package", exact: "7.7.7")
     ],
     
@@ -83,14 +83,14 @@ let package = Package(
 //                .product(name: "AppLovinSDK", package: "AppLovin-MAX-Swift-Package")
 //            ]
 //        ),
-        .target(
-            name: "CASMediationGoogleAdsTarget",
-            dependencies: [
-                .target(name: "CASMediationGoogleAds"),
-                .target(name: "CleverAdsSolutionsTarget"),
-                .product(name: "GoogleMobileAds", package: "swift-package-manager-google-mobile-ads")
-            ]
-        ),
+//        .target(
+//            name: "CASMediationGoogleAdsTarget",
+//            dependencies: [
+//                .target(name: "CASMediationGoogleAds"),
+//                .target(name: "CleverAdsSolutionsTarget"),
+//                .product(name: "GoogleMobileAds", package: "swift-package-manager-google-mobile-ads")
+//            ]
+//        ),
 //        .target(
 //            name: "CASMediationVungleTarget",
 //            dependencies: [
@@ -147,23 +147,23 @@ let package = Package(
         ),
 //        .binaryTarget(
 //            name: "CASMediationAppLovin",
-//            url: "https://github.com/shumakovd/spm-test/releases/download/v1.1.9/CASMediationAppLovin-13.2.0.0.zip",
-//            checksum: "1fb80b48b14e82b1bf6b1fa48e71fe4e6763ca7b5da61acbcefbc3e8a976789f"
+//            url: "",
+//            checksum: ""
 //        ),
-        .binaryTarget(
-            name: "CASMediationGoogleAds",
-            url: "https://github.com/shumakovd/spm-test/releases/download/v1.2.2/CASMediationGoogleAds-12.3.0.0.zip",
-            checksum: "68b6631dac14e4c687915b14042640977993efcfaa363ee33ce9dd83d15b016c"
-        ),
+//        .binaryTarget(
+//            name: "CASMediationGoogleAds",
+//            url: "",
+//            checksum: ""
+//        ),
 //        .binaryTarget(
 //            name: "CASMediationVungle",
-//            url: "https://github.com/shumakovd/spm-test/releases/download/v1.0.9/CASMediationLiftoffMonetize-7.4.5.0.zip",
-//            checksum: "8f1d061eb05d1d34d0ff8289d9e9789788fddb6eb3f9843d42e7d485cccf099b"
+//            url: "",
+//            checksum: ""
 //        ),
         .binaryTarget(
             name: "CASMediationMintegral",
-            url: "https://github.com/shumakovd/spm-test/releases/download/v1.2.2/CASMediationMintegral-7.7.7.0.zip",
-            checksum: "dd01bb1d7ccbcc73cc3a28b1c63b2ba5e0cd040081acc0041a4d9f5a4405dcb6"
+            url: "https://github.com/shumakovd/spm-test/releases/download/v1.2.3/CASMediationMintegral-7.7.7.0.zip",
+            checksum: "562b9489811b7f0f0665b8ad3ac0c954f7fa189e2539ac56a7ba70a282a6f28a"
         )
 //        .binaryTarget(
 //            name: "IronSource",

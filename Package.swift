@@ -152,8 +152,8 @@ let package = Package(
 //        ),
         .binaryTarget(
             name: "CASMediationGoogleAds",
-            url: "https://github.com/shumakovd/spm-test/releases/download/v1.2.3/CASMediationGoogleAds-12.3.0.0.zip",
-            checksum: "d690755341daefc30845920d3531b003b416557f5c187172755b6b8163a1a6f3"
+            url: "https://github.com/shumakovd/spm-test/releases/download/v1.2.4/CASMediationGoogleAds-12.3.0.0.zip",
+            checksum: "2f6c47e8bbb6bd546f924b5a3e8096a073185d1ef72f64a72e848f6cca23a019"
         ),
 //        .binaryTarget(
 //            name: "CASMediationVungle",
@@ -162,8 +162,8 @@ let package = Package(
 //        ),
         .binaryTarget(
             name: "CASMediationMintegral",
-            url: "https://github.com/shumakovd/spm-test/releases/download/v1.2.3/CASMediationMintegral-7.7.7.0.zip",
-            checksum: "562b9489811b7f0f0665b8ad3ac0c954f7fa189e2539ac56a7ba70a282a6f28a"
+            url: "https://github.com/shumakovd/spm-test/releases/download/v1.2.4/CASMediationMintegral-7.7.7.0.zip",
+            checksum: "37ef7fa62aad7b324b2318deb063deed786f0436272d3acbd7e1397226f4d535"
         )
 //        .binaryTarget(
 //            name: "IronSource",

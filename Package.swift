@@ -182,6 +182,7 @@ let package = Package(
         .target(
             name: "CASMediationIronSourceTarget",
             dependencies: [
+                .target(name: "IronSourceTarget"),
                 .target(name: "CASMediationIronSource"),
                 .target(name: "CleverAdsSolutionsTarget")
             ]

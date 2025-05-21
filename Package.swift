@@ -51,7 +51,7 @@ let package = Package(
         )
     ],
     
-    dependencies: [        
+    dependencies: [
         .package(url: "https://github.com/AppLovin/AppLovin-MAX-Swift-Package", exact: "13.2.0"),
         .package(url: "https://github.com/Vungle/VungleAdsSDK-SwiftPackageManager", exact: "7.4.5"),
         // Latest version v7.1.1.0 not available.
@@ -89,6 +89,32 @@ let package = Package(
                 .linkedFramework("WebKit")
             ]
         ),
+        
+        .target(
+            name: "IronSourceTarget",
+            dependencies: [
+                .target(name: "IronSource")
+            ],
+            linkerSettings: [
+                .linkedFramework("AdSupport"),
+                .linkedFramework("AudioToolbox"),
+                .linkedFramework("AVFoundation"),
+                .linkedFramework("CFNetwork"),
+                .linkedFramework("CoreGraphics"),
+                .linkedFramework("CoreMedia"),
+                .linkedFramework("CoreTelephony"),
+                .linkedFramework("CoreVideo"),
+                .linkedFramework("Foundation"),
+                .linkedFramework("MobileCoreServices"),
+                .linkedFramework("QuartzCore"),
+                .linkedFramework("Security"),
+                .linkedFramework("StoreKit"),
+                .linkedFramework("SystemConfiguration"),
+                .linkedLibrary("z")
+            ]
+        ),
+
+        
         .target(
             name: "CASMediationAppLovinTarget",
             dependencies: [
@@ -210,6 +236,11 @@ let package = Package(
             name: "CASMediationIronSource",
             url: "https://github.com/shumakovd/spm-test/releases/download/v1.2.4/CASMediationIronSource-8.8.0.0.zip",
             checksum: "10386758f451621f5ffa5c525f24bd0071d4c35dba8d028dd71bec1b74def5a4"
+        ),
+        .binaryTarget(
+            name: "IronSource",
+            url: "https://github.com/ironsource-mobile/iOS-sdk/raw/master/8.8.0/IronSource8.8.0.zip",
+            checksum: "e278dded76ed9cb23bc0b51ffce134dd5dc75572e84deeeeae053f07fe77d806"
         )
     ]
 )

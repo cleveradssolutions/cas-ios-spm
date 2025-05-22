@@ -73,6 +73,9 @@ let package = Package(
             dependencies: [
                 .target(name: "CleverAdsSolutions")
             ],
+            resources: [
+                .process("Resources")
+            ],
             linkerSettings: [
                 .linkedFramework("AVFoundation"),
                 .linkedFramework("AdSupport"),
@@ -229,8 +232,8 @@ let package = Package(
                         
         .binaryTarget(
             name: "CleverAdsSolutions",
-            url: "https://github.com/shumakovd/spm-test/releases/download/v1.0.8/CleverAdsSolutions.zip",
-            checksum: "8c899e1e3d24a4c7afda579f579e6f366cc672ee66faa803a442bfa15e60a725"
+            url: "https://github.com/shumakovd/spm-test/releases/download/v1.2.8/CleverAdsSolutions.zip",
+            checksum: "9dcd6377223ac50837401c6e4a09ecf4eb53742be4948326ce5d70b807478b98"
         ),
                 
         .binaryTarget(
@@ -295,8 +298,8 @@ let package = Package(
         ),
         .binaryTarget(
             name: "CASMediationCrossPromo",
-            url: "https://github.com/shumakovd/spm-test/releases/download/v1.2.7/CASMediationCrossPromo-4.0.2.0.zip",
-            checksum: "2c7cd5ca539df539c287e21041f5df96ba8a6717ccbdcb8e1bcd42afc24a1680"
+            url: "https://github.com/shumakovd/spm-test/releases/download/v1.2.8/CASMediationCrossPromo-4.0.2.0.zip",
+            checksum: "c3d88da3dcddbe55a2d8a86717a69432e284ebcd83c9cad326474b2d0e4cf6da"
         )
     ]
 )

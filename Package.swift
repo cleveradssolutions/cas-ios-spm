@@ -61,7 +61,7 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/AppLovin/AppLovin-MAX-Swift-Package", exact: "13.2.0"),
         .package(url: "https://github.com/Vungle/VungleAdsSDK-SwiftPackageManager", exact: "7.4.5"),
-        // .package(url: "https://github.com/yandexmobile/yandex-ads-sdk-ios.git", exact: "7.12.1"),
+        // .package(url: "https://github.com/yandexmobile/yandex-ads-sdk-ios", exact: "7.12.3"),
         .package(url: "https://github.com/StartApp-SDK/StartAppSDK-SwiftPackage", exact: "4.10.5"),
         .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads", exact: "12.3.0"),
         .package(url: "https://github.com/Mintegral-official/MintegralAdSDK-Swift-Package", exact: "7.7.7")
@@ -188,7 +188,7 @@ let package = Package(
 //            dependencies: [
 //                .target(name: "CASMediationYandexAds"),
 //                .target(name: "CleverAdsSolutionsTarget"),
-//                .product(name: "YandexMobileAds", package: "yandex-ads-sdk-ios")
+//                .product(name: "YandexAdsSDK", package: "yandex-ads-sdk-ios")
 //            ]
 //        ),
         .target(
@@ -220,10 +220,11 @@ let package = Package(
             dependencies: [
                 .target(name: "CASMediationCrossPromo"),
                 .target(name: "CleverAdsSolutionsTarget")
+            ],
+            resources: [
+                .process("Resources")
             ]
         ),
-        
-       
         
                         
         .binaryTarget(

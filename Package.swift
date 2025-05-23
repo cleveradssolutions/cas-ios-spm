@@ -73,6 +73,9 @@ let package = Package(
             dependencies: [
                 .target(name: "CleverAdsSolutions")
             ],
+            resources: [
+                .process("Resources")
+            ],
             linkerSettings: [
                 .linkedFramework("AVFoundation"),
                 .linkedFramework("AdSupport"),
@@ -220,6 +223,9 @@ let package = Package(
             dependencies: [
                 .target(name: "CASMediationCrossPromo"),
                 .target(name: "CleverAdsSolutionsTarget")
+            ],
+            resources: [
+                .process("Resources")
             ]
         ),
         

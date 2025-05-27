@@ -7,7 +7,7 @@ import Foundation
 
 @objc(CASBaseBundleProvider)
 public class CASBaseBundleProvider: NSObject {
-    @objc func provideBundle() -> Bundle {
+    @objc public func provideBundle() -> Bundle {
         Bundle.module
     }
 }

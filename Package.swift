@@ -10,8 +10,8 @@ let package = Package(
     
     products: [
         .library(
-            name: "CleverAdsSolutions",
-            targets: ["CleverAdsSolutionsTarget"]
+            name: "CleverAdsSolutionsSPM",
+            targets: ["CleverAdsSolutionsSPMTarget"]
         ),
         .library(
             name: "CASMediationIronSource",
@@ -64,9 +64,9 @@ let package = Package(
     
     targets: [
         .target(
-            name: "CleverAdsSolutionsTarget",
+            name: "CleverAdsSolutionsSPMTarget",
             dependencies: [
-                .target(name: "CleverAdsSolutions")
+                .target(name: "CleverAdsSolutionsSPM")
             ],
             resources: [
                 .copy("Resources/CASBaseResources.bundle")
@@ -120,7 +120,7 @@ let package = Package(
             dependencies: [
                 .target(name: "IronSourceSPMTarget"),
                 .target(name: "CASMediationIronSource"),
-                .target(name: "CleverAdsSolutionsTarget")
+                .target(name: "CleverAdsSolutionsSPMTarget")
             ]
         ),
         
@@ -152,7 +152,7 @@ let package = Package(
             dependencies: [
                 .target(name: "UnityAdsSPMTarget"),
                 .target(name: "CASMediationUnityAds"),
-                .target(name: "CleverAdsSolutionsTarget")
+                .target(name: "CleverAdsSolutionsSPMTarget")
             ]
         ),
 
@@ -161,7 +161,7 @@ let package = Package(
             name: "CASMediationAppLovinTarget",
             dependencies: [
                 .target(name: "CASMediationAppLovin"),
-                .target(name: "CleverAdsSolutionsTarget"),
+                .target(name: "CleverAdsSolutionsSPMTarget"),
                 .product(name: "AppLovinSDK", package: "AppLovin-MAX-Swift-Package")
             ]
         ),
@@ -169,7 +169,7 @@ let package = Package(
             name: "CASMediationGoogleAdsTarget",
             dependencies: [
                 .target(name: "CASMediationGoogleAds"),
-                .target(name: "CleverAdsSolutionsTarget"),
+                .target(name: "CleverAdsSolutionsSPMTarget"),
                 .product(name: "GoogleMobileAds", package: "swift-package-manager-google-mobile-ads")
             ]
         ),
@@ -177,7 +177,7 @@ let package = Package(
             name: "CASMediationVungleTarget",
             dependencies: [
                 .target(name: "CASMediationVungle"),
-                .target(name: "CleverAdsSolutionsTarget"),
+                .target(name: "CleverAdsSolutionsSPMTarget"),
                 .product(name: "VungleAdsSDK", package: "VungleAdsSDK-SwiftPackageManager")
             ]
         ),
@@ -186,7 +186,7 @@ let package = Package(
             name: "CASMediationStartIOTarget",
             dependencies: [
                 .target(name: "CASMediationStartIO"),
-                .target(name: "CleverAdsSolutionsTarget"),
+                .target(name: "CleverAdsSolutionsSPMTarget"),
                 .product(name: "StartApp", package: "StartAppSDK-SwiftPackage")
             ]
         ),
@@ -194,7 +194,7 @@ let package = Package(
             name: "CASMediationMintegralTarget",
             dependencies: [
                 .target(name: "CASMediationMintegral"),
-                .target(name: "CleverAdsSolutionsTarget"),
+                .target(name: "CleverAdsSolutionsSPMTarget"),
                 .product(name: "MintegralAdSDK", package: "MintegralAdSDK-Swift-Package")
             ]
         ),
@@ -203,14 +203,14 @@ let package = Package(
             name: "CASMediationExchangeTarget",
             dependencies: [
                 .target(name: "CASMediationExchange"),
-                .target(name: "CleverAdsSolutionsTarget")
+                .target(name: "CleverAdsSolutionsSPMTarget")
             ]
         ),
         .target(
             name: "CASMediationCrossPromoTarget",
             dependencies: [
                 .target(name: "CASMediationCrossPromo"),
-                .target(name: "CleverAdsSolutionsTarget")
+                .target(name: "CleverAdsSolutionsSPMTarget")
             ],
             resources: [
                 .copy("Resources/CASPromoResources.bundle")
@@ -219,7 +219,7 @@ let package = Package(
         
                         
         .binaryTarget(
-            name: "CleverAdsSolutions",
+            name: "CleverAdsSolutionsSPM",
             url: "https://github.com/shumakovd/spm-test/releases/download/v1.3.6/CleverAdsSolutions.zip",
             checksum: "2fb00badcd642ab8028b21070e3dda5ba17fcb4667995f881dc759aca677fc46"
         ),

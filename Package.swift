@@ -69,7 +69,7 @@ let package = Package(
                 .target(name: "CleverAdsSolutionsSPM")
             ],
             resources: [
-                .copy("Resources/CASBaseResources.bundle")
+                .process("Resources")
             ],
             linkerSettings: [
                 .linkedFramework("AVFoundation"),
@@ -213,7 +213,7 @@ let package = Package(
                 .target(name: "CleverAdsSolutionsSPMTarget")
             ],
             resources: [
-                .copy("Resources/CASPromoResources.bundle")
+                .process("Resources")
             ]
         ),
         

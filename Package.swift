@@ -74,7 +74,7 @@ let package = Package(
                 .target(name: "CleverAdsSolutions")
             ],
             resources: [
-                .process("Resources")
+                .copy("Resources")
             ],
             linkerSettings: [
                 .linkedFramework("AVFoundation"),
@@ -225,7 +225,7 @@ let package = Package(
                 .target(name: "CleverAdsSolutionsTarget")
             ],
             resources: [
-                .process("Resources")
+                .copy("Resources")
             ]
         ),
         

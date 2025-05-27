@@ -10,8 +10,8 @@ let package = Package(
     
     products: [
         .library(
-            name: "CleverAdsSolutions",
-            targets: ["CleverAdsSolutionsTarget"]
+            name: "CleverAdsSolutionsSPM",
+            targets: ["CleverAdsSolutionsSPMTarget"]
         ),
         .library(
             name: "CASMediationIronSource",
@@ -34,10 +34,6 @@ let package = Package(
             name: "CASMediationVungle",
             targets: ["CASMediationVungleTarget"]
         ),
-//        .library(
-//            name: "CASMediationYandexAds",
-//            targets: ["CASMediationYandexAdsTarget"]
-//        ),
        
         .library(
             name: "CASMediationStartIO",
@@ -61,7 +57,6 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/AppLovin/AppLovin-MAX-Swift-Package", exact: "13.2.0"),
         .package(url: "https://github.com/Vungle/VungleAdsSDK-SwiftPackageManager", exact: "7.4.5"),
-        // .package(url: "https://github.com/yandexmobile/yandex-ads-sdk-ios", exact: "7.12.3"),
         .package(url: "https://github.com/StartApp-SDK/StartAppSDK-SwiftPackage", exact: "4.10.5"),
         .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads", exact: "12.3.0"),
         .package(url: "https://github.com/Mintegral-official/MintegralAdSDK-Swift-Package", exact: "7.7.7")
@@ -69,9 +64,9 @@ let package = Package(
     
     targets: [
         .target(
-            name: "CleverAdsSolutionsTarget",
+            name: "CleverAdsSolutionsSPMTarget",
             dependencies: [
-                .target(name: "CleverAdsSolutions")
+                .target(name: "CleverAdsSolutionsSPM")
             ],
             resources: [
                 .copy("Resources/CASBaseResources.bundle")
@@ -98,9 +93,9 @@ let package = Package(
         ),
         
         .target(
-            name: "IronSourceTarget",
+            name: "IronSourceSPMTarget",
             dependencies: [
-                .target(name: "IronSource")
+                .target(name: "IronSourceSPM")
             ],
             linkerSettings: [
                 .linkedFramework("AdSupport"),
@@ -123,16 +118,16 @@ let package = Package(
         .target(
             name: "CASMediationIronSourceTarget",
             dependencies: [
-                .target(name: "IronSourceTarget"),
+                .target(name: "IronSourceSPMTarget"),
                 .target(name: "CASMediationIronSource"),
-                .target(name: "CleverAdsSolutionsTarget")
+                .target(name: "CleverAdsSolutionsSPMTarget")
             ]
         ),
         
         .target(
-            name: "UnityAdsTarget",
+            name: "UnityAdsSPMTarget",
             dependencies: [
-                .target(name: "UnityAds")
+                .target(name: "UnityAdsSPM")
             ],
             linkerSettings: [
                 .linkedFramework("AdSupport"),
@@ -155,9 +150,9 @@ let package = Package(
         .target(
             name: "CASMediationUnityAdsTarget",
             dependencies: [
-                .target(name: "UnityAdsTarget"),
+                .target(name: "UnityAdsSPMTarget"),
                 .target(name: "CASMediationUnityAds"),
-                .target(name: "CleverAdsSolutionsTarget")
+                .target(name: "CleverAdsSolutionsSPMTarget")
             ]
         ),
 
@@ -166,7 +161,7 @@ let package = Package(
             name: "CASMediationAppLovinTarget",
             dependencies: [
                 .target(name: "CASMediationAppLovin"),
-                .target(name: "CleverAdsSolutionsTarget"),
+                .target(name: "CleverAdsSolutionsSPMTarget"),
                 .product(name: "AppLovinSDK", package: "AppLovin-MAX-Swift-Package")
             ]
         ),
@@ -174,7 +169,7 @@ let package = Package(
             name: "CASMediationGoogleAdsTarget",
             dependencies: [
                 .target(name: "CASMediationGoogleAds"),
-                .target(name: "CleverAdsSolutionsTarget"),
+                .target(name: "CleverAdsSolutionsSPMTarget"),
                 .product(name: "GoogleMobileAds", package: "swift-package-manager-google-mobile-ads")
             ]
         ),
@@ -182,23 +177,16 @@ let package = Package(
             name: "CASMediationVungleTarget",
             dependencies: [
                 .target(name: "CASMediationVungle"),
-                .target(name: "CleverAdsSolutionsTarget"),
+                .target(name: "CleverAdsSolutionsSPMTarget"),
                 .product(name: "VungleAdsSDK", package: "VungleAdsSDK-SwiftPackageManager")
             ]
         ),
-//        .target(
-//            name: "CASMediationYandexAdsTarget",
-//            dependencies: [
-//                .target(name: "CASMediationYandexAds"),
-//                .target(name: "CleverAdsSolutionsTarget"),
-//                .product(name: "YandexAdsSDK", package: "yandex-ads-sdk-ios")
-//            ]
-//        ),
+        
         .target(
             name: "CASMediationStartIOTarget",
             dependencies: [
                 .target(name: "CASMediationStartIO"),
-                .target(name: "CleverAdsSolutionsTarget"),
+                .target(name: "CleverAdsSolutionsSPMTarget"),
                 .product(name: "StartApp", package: "StartAppSDK-SwiftPackage")
             ]
         ),
@@ -206,7 +194,7 @@ let package = Package(
             name: "CASMediationMintegralTarget",
             dependencies: [
                 .target(name: "CASMediationMintegral"),
-                .target(name: "CleverAdsSolutionsTarget"),
+                .target(name: "CleverAdsSolutionsSPMTarget"),
                 .product(name: "MintegralAdSDK", package: "MintegralAdSDK-Swift-Package")
             ]
         ),
@@ -215,14 +203,14 @@ let package = Package(
             name: "CASMediationExchangeTarget",
             dependencies: [
                 .target(name: "CASMediationExchange"),
-                .target(name: "CleverAdsSolutionsTarget")
+                .target(name: "CleverAdsSolutionsSPMTarget")
             ]
         ),
         .target(
             name: "CASMediationCrossPromoTarget",
             dependencies: [
                 .target(name: "CASMediationCrossPromo"),
-                .target(name: "CleverAdsSolutionsTarget")
+                .target(name: "CleverAdsSolutionsSPMTarget")
             ],
             resources: [
                 .copy("Resources/CASPromoResources.bundle")
@@ -231,13 +219,13 @@ let package = Package(
         
                         
         .binaryTarget(
-            name: "CleverAdsSolutions",
+            name: "CleverAdsSolutionsSPM",
             url: "https://github.com/shumakovd/spm-test/releases/download/v1.3.6/CleverAdsSolutions.zip",
             checksum: "2fb00badcd642ab8028b21070e3dda5ba17fcb4667995f881dc759aca677fc46"
         ),
                 
         .binaryTarget(
-            name: "IronSource",
+            name: "IronSourceSPM",
             url: "https://github.com/ironsource-mobile/iOS-sdk/raw/master/8.8.0/IronSource8.8.0.zip",
             checksum: "e278dded76ed9cb23bc0b51ffce134dd5dc75572e84deeeeae053f07fe77d806"
         ),
@@ -248,7 +236,7 @@ let package = Package(
         ),
         
         .binaryTarget(
-            name: "UnityAds",
+            name: "UnityAdsSPM",
             url: "https://github.com/Unity-Technologies/unity-ads-ios/releases/download/4.14.2/UnityAds.zip",
             checksum: "4e695f438393edd8c7fb8af3f14dcdfa21ce5c52259c7d37696129db7000493f"
         ),
@@ -274,11 +262,6 @@ let package = Package(
             url: "https://github.com/shumakovd/spm-test/releases/download/v1.2.7/CASMediationLiftoffMonetize-7.5.0.0.zip",
             checksum: "cdba86a2c6087dcba164c3099d0e0b88768c97c4d9722ed7acfada97cff31c1c"
         ),
-//        .binaryTarget(
-//            name: "CASMediationYandexAds",
-//            url: "https://github.com/shumakovd/spm-test/releases/download/v1.2.7/CASMediationYandexAds-7.12.1.0.zip",
-//            checksum: "464ef13b09feb5accd5db99016982cd351e5b05a3276b4bf35b01806548fe4a9"
-//        ),
         
         .binaryTarget(
             name: "CASMediationStartIO",

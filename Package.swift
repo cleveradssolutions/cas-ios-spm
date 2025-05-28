@@ -66,27 +66,15 @@ let package = Package(
         .target(
             name: "CleverAdsSolutionsSPMTarget",
             dependencies: [
-                .target(name: "CleverAdsSolutionsSPM")
-            ],
-            resources: [
-                .process("Resources")
+                .target(name: "CleverAdsSolutionsSPM"),
+                .target(name: "CleverAdsSolutionsResources")
             ],
             linkerSettings: [
                 .linkedFramework("AVFoundation"),
-                .linkedFramework("AdSupport"),
-                .linkedFramework("AppTrackingTransparency"),
-                .linkedFramework("CoreGraphics"),
-                .linkedFramework("CoreImage"),
                 .linkedFramework("CoreLocation"),
-                .linkedFramework("CoreMedia"),
-                .linkedFramework("CoreTelephony"),
-                .linkedFramework("CoreText"),
                 .linkedFramework("Foundation"),
                 .linkedFramework("Network"),
-                .linkedFramework("QuartzCore"),
-                .linkedFramework("StoreKit"),
                 .linkedFramework("SwiftUI"),
-                .linkedFramework("SystemConfiguration"),
                 .linkedFramework("UIKit"),
                 .linkedFramework("WebKit")
             ]
@@ -204,14 +192,34 @@ let package = Package(
             dependencies: [
                 .target(name: "CASMediationExchange"),
                 .target(name: "CleverAdsSolutionsSPMTarget")
+            ],
+            linkerSettings: [
+                .linkedFramework("SafariServices"),
+                .linkedFramework("SystemConfiguration"),
+                .linkedFramework("AVFoundation"),
+                .linkedFramework("CoreGraphics"),
+                .linkedFramework("CoreLocation"),
+                .linkedFramework("CoreMedia"),
+                .linkedFramework("QuartzCore")
             ]
         ),
         .target(
             name: "CASMediationCrossPromoTarget",
             dependencies: [
                 .target(name: "CASMediationCrossPromo"),
-                .target(name: "CleverAdsSolutionsSPMTarget")
-            ],
+                .target(name: "CleverAdsSolutionsSPMTarget"),
+                .target(name: "CASMediationCrossPromoResources")
+            ]
+        ),
+        
+        .target(
+            name: "CleverAdsSolutionsResources",
+            resources: [
+                .process("Resources")
+            ]
+        ),
+        .target(
+            name: "CASMediationCrossPromoResources",
             resources: [
                 .process("Resources")
             ]

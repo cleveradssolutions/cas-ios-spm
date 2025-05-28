@@ -220,8 +220,8 @@ let package = Package(
                         
         .binaryTarget(
             name: "CleverAdsSolutionsSPM",
-            url: "https://github.com/shumakovd/spm-test/releases/download/v1.3.7/CleverAdsSolutions.zip",
-            checksum: "20923b94f04b5c67bbf38bb7566d1777106c8498e1b772e9702543189fccc902"
+            url: "https://github.com/shumakovd/spm-test/releases/download/v1.3.8/CleverAdsSolutions.zip",
+            checksum: "f4be555eb65b108c9066184f36df2cc8c0903c62457e8d5ff4dda7eb989b9d3d"
         ),
                 
         .binaryTarget(
@@ -281,8 +281,8 @@ let package = Package(
         ),
         .binaryTarget(
             name: "CASMediationCrossPromo",
-            url: "https://github.com/shumakovd/spm-test/releases/download/v1.3.7/CASMediationCrossPromo-4.0.2.0.zip",
-            checksum: "b9f49d330b8fee698ec2285aacd753e051132f70f4ad088e6fb6e433a1a076ce"
+            url: "https://github.com/shumakovd/spm-test/releases/download/v1.3.8/CASMediationCrossPromo-4.0.2.0.zip",
+            checksum: "276d7320a076d28f2113842f7a247bb2632d9018a3194874775fbf9076c957c8"
         )
     ]
 )

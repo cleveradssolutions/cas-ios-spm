@@ -3,6 +3,24 @@
 
 import PackageDescription
 
+// Integration of some SDKs (e.g. IronSource, UnityAds) is not done through ready-made SPM packages,
+// but using .zip archives from official GitHub repositories.
+// Below are the links to the sources used to configure binaryTarget:
+//
+// - IronSource:
+// The SDK archive was taken from the official repository:
+// https://github.com/ironsource-mobile/iOS-sdk/tree/master/8.8.0
+// Archive: IronSource8.8.0.zip
+//
+// - UnityAds:
+// The SDK archive was taken from the official GitHub Releases:
+// https://github.com/Unity-Technologies/unity-ads-ios/releases
+// Specific release: https://github.com/Unity-Technologies/unity-ads-ios/releases/tag/4.14.2
+// Archive: UnityAds.zip
+//
+// These archives were downloaded and used in `binaryTarget` as allowed by Swift Package Manager.
+//
+
 let package = Package(
     name: "CleverAdsSolutions",
     
@@ -62,7 +80,7 @@ let package = Package(
         .package(url: "https://github.com/AppLovin/AppLovin-MAX-Swift-Package", exact: "13.2.0"),
         .package(url: "https://github.com/Vungle/VungleAdsSDK-SwiftPackageManager", exact: "7.4.5"),
         .package(url: "https://github.com/StartApp-SDK/StartAppSDK-SwiftPackage", exact: "4.10.5"),
-        .package(url: "https://github.com/yandexmobile/yandex-ads-sdk-ios", exact: "7.12.1"),
+        .package(url: "https://github.com/yandexmobile/yandex-ads-sdk-ios", exact: "7.12.3"),
         .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads", exact: "12.3.0"),
         .package(url: "https://github.com/Mintegral-official/MintegralAdSDK-Swift-Package", exact: "7.7.7")
     ],

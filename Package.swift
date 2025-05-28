@@ -43,6 +43,10 @@ let package = Package(
             name: "CASMediationMintegral",
             targets: ["CASMediationMintegralTarget"]
         ),
+//        .library(
+//            name: "CASMediationYandexAds",
+//            targets: ["CASMediationYandexAdsTarget"]
+//        ),
         
         .library(
             name: "CASMediationExchange",
@@ -58,6 +62,7 @@ let package = Package(
         .package(url: "https://github.com/AppLovin/AppLovin-MAX-Swift-Package", exact: "13.2.0"),
         .package(url: "https://github.com/Vungle/VungleAdsSDK-SwiftPackageManager", exact: "7.4.5"),
         .package(url: "https://github.com/StartApp-SDK/StartAppSDK-SwiftPackage", exact: "4.10.5"),
+        .package(url: "https://github.com/yandexmobile/yandex-ads-sdk-ios", exact: "7.12.1"),
         .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads", exact: "12.3.0"),
         .package(url: "https://github.com/Mintegral-official/MintegralAdSDK-Swift-Package", exact: "7.7.7")
     ],
@@ -170,6 +175,14 @@ let package = Package(
                 .product(name: "MintegralAdSDK", package: "MintegralAdSDK-Swift-Package")
             ]
         ),
+//        .target(
+//            name: "CASMediationYandexAdsTarget",
+//            dependencies: [
+//                .target(name: "CASMediationYandexAds"),
+//                .target(name: "CASBaseResources"),
+//                .product(name: "YandexAdsSDK", package: "yandex-ads-sdk-ios")
+//            ]
+//        ),
         
         .target(
             name: "CASMediationExchangeTarget",
@@ -273,6 +286,11 @@ let package = Package(
             url: "https://github.com/shumakovd/spm-test/releases/download/v1.2.7/CASMediationMintegral-7.7.7.0.zip",
             checksum: "d99a57fba1ea0753fe8f272cedfe11f32c297875429fdbf6de07e7d81dabf294"
         ),
+//        .binaryTarget(
+//            name: "CASMediationYandexAds",
+//            url: "https://github.com/shumakovd/spm-test/releases/download/v1.2.7/CASMediationYandexAds-7.12.1.0.zip",
+//            checksum: "464ef13b09feb5accd5db99016982cd351e5b05a3276b4bf35b01806548fe4a9"
+//        ),
         
         .binaryTarget(
             name: "CASMediationExchange",

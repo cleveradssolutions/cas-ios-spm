@@ -11,7 +11,7 @@ let package = Package(
     products: [
         .library(
             name: "CleverAdsSolutionsSPM",
-            targets: ["CleverAdsSolutionsSPMTarget"]
+            targets: ["CASBaseResources"]
         ),
         .library(
             name: "CASMediationIronSource",
@@ -50,7 +50,7 @@ let package = Package(
         ),
         .library(
             name: "CASMediationCrossPromo",
-            targets: ["CASMediationCrossPromoTarget"]
+            targets: ["CASPromoResources"]
         )
     ],
     
@@ -63,23 +63,7 @@ let package = Package(
     ],
     
     targets: [
-        .target(
-            name: "CleverAdsSolutionsSPMTarget",
-            dependencies: [
-                .target(name: "CleverAdsSolutionsSPM"),
-                .target(name: "CASBaseResources")
-            ],
-            linkerSettings: [
-                .linkedFramework("AVFoundation"),
-                .linkedFramework("CoreLocation"),
-                .linkedFramework("Foundation"),
-                .linkedFramework("Network"),
-                .linkedFramework("SwiftUI"),
-                .linkedFramework("UIKit"),
-                .linkedFramework("WebKit")
-            ]
-        ),
-        
+    
         .target(
             name: "IronSourceSPMTarget",
             dependencies: [
@@ -108,7 +92,7 @@ let package = Package(
             dependencies: [
                 .target(name: "IronSourceSPMTarget"),
                 .target(name: "CASMediationIronSource"),
-                .target(name: "CleverAdsSolutionsSPMTarget")
+                .target(name: "CASBaseResources")
             ]
         ),
         
@@ -132,7 +116,7 @@ let package = Package(
                 .linkedFramework("Network"),
                 .linkedFramework("StoreKit"),
                 .linkedFramework("AVFAudio"),
-                .linkedFramework("SystemConfiguration"),
+                .linkedFramework("SystemConfiguration")
             ]
         ),
         .target(
@@ -140,7 +124,7 @@ let package = Package(
             dependencies: [
                 .target(name: "UnityAdsSPMTarget"),
                 .target(name: "CASMediationUnityAds"),
-                .target(name: "CleverAdsSolutionsSPMTarget")
+                .target(name: "CASBaseResources")
             ]
         ),
 
@@ -149,7 +133,7 @@ let package = Package(
             name: "CASMediationAppLovinTarget",
             dependencies: [
                 .target(name: "CASMediationAppLovin"),
-                .target(name: "CleverAdsSolutionsSPMTarget"),
+                .target(name: "CASBaseResources"),
                 .product(name: "AppLovinSDK", package: "AppLovin-MAX-Swift-Package")
             ]
         ),
@@ -157,7 +141,7 @@ let package = Package(
             name: "CASMediationGoogleAdsTarget",
             dependencies: [
                 .target(name: "CASMediationGoogleAds"),
-                .target(name: "CleverAdsSolutionsSPMTarget"),
+                .target(name: "CASBaseResources"),
                 .product(name: "GoogleMobileAds", package: "swift-package-manager-google-mobile-ads")
             ]
         ),
@@ -165,7 +149,7 @@ let package = Package(
             name: "CASMediationVungleTarget",
             dependencies: [
                 .target(name: "CASMediationVungle"),
-                .target(name: "CleverAdsSolutionsSPMTarget"),
+                .target(name: "CASBaseResources"),
                 .product(name: "VungleAdsSDK", package: "VungleAdsSDK-SwiftPackageManager")
             ]
         ),
@@ -174,7 +158,7 @@ let package = Package(
             name: "CASMediationStartIOTarget",
             dependencies: [
                 .target(name: "CASMediationStartIO"),
-                .target(name: "CleverAdsSolutionsSPMTarget"),
+                .target(name: "CASBaseResources"),
                 .product(name: "StartApp", package: "StartAppSDK-SwiftPackage")
             ]
         ),
@@ -182,7 +166,7 @@ let package = Package(
             name: "CASMediationMintegralTarget",
             dependencies: [
                 .target(name: "CASMediationMintegral"),
-                .target(name: "CleverAdsSolutionsSPMTarget"),
+                .target(name: "CASBaseResources"),
                 .product(name: "MintegralAdSDK", package: "MintegralAdSDK-Swift-Package")
             ]
         ),
@@ -191,7 +175,7 @@ let package = Package(
             name: "CASMediationExchangeTarget",
             dependencies: [
                 .target(name: "CASMediationExchange"),
-                .target(name: "CleverAdsSolutionsSPMTarget")
+                .target(name: "CASBaseResources")
             ],
             linkerSettings: [
                 .linkedFramework("SafariServices"),
@@ -203,23 +187,31 @@ let package = Package(
                 .linkedFramework("QuartzCore")
             ]
         ),
-        .target(
-            name: "CASMediationCrossPromoTarget",
-            dependencies: [
-                .target(name: "CASMediationCrossPromo"),
-                .target(name: "CleverAdsSolutionsSPMTarget"),
-                .target(name: "CASPromoResources")
-            ]
-        ),
         
         .target(
             name: "CASBaseResources",
+            dependencies: [
+                .target(name: "CleverAdsSolutionsSPM"),
+            ],
             resources: [
                 .process("Resources")
+            ],
+            linkerSettings: [
+                .linkedFramework("AVFoundation"),
+                .linkedFramework("CoreLocation"),
+                .linkedFramework("Foundation"),
+                .linkedFramework("Network"),
+                .linkedFramework("SwiftUI"),
+                .linkedFramework("UIKit"),
+                .linkedFramework("WebKit")
             ]
         ),
         .target(
             name: "CASPromoResources",
+            dependencies: [
+                .target(name: "CASMediationCrossPromo"),
+                .target(name: "CASBaseResources")
+            ],
             resources: [
                 .process("Resources")
             ]

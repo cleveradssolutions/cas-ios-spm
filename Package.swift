@@ -43,10 +43,10 @@ let package = Package(
             name: "CASMediationMintegral",
             targets: ["CASMediationMintegralTarget"]
         ),
-//        .library(
-//            name: "CASMediationYandexAds",
-//            targets: ["CASMediationYandexAdsTarget"]
-//        ),
+        .library(
+            name: "CASMediationYandexAds",
+            targets: ["CASMediationYandexAdsTarget"]
+        ),
         
         .library(
             name: "CASMediationExchange",
@@ -175,14 +175,14 @@ let package = Package(
                 .product(name: "MintegralAdSDK", package: "MintegralAdSDK-Swift-Package")
             ]
         ),
-//        .target(
-//            name: "CASMediationYandexAdsTarget",
-//            dependencies: [
-//                .target(name: "CASMediationYandexAds"),
-//                .target(name: "CASBaseResources"),
-//                .product(name: "YandexAdsSDK", package: "yandex-ads-sdk-ios")
-//            ]
-//        ),
+        .target(
+            name: "CASMediationYandexAdsTarget",
+            dependencies: [
+                .target(name: "CASMediationYandexAds"),
+                .target(name: "CASBaseResources"),
+                .product(name: "YandexMobileAdsPackage", package: "yandex-ads-sdk-ios")
+            ]
+        ),
         
         .target(
             name: "CASMediationExchangeTarget",
@@ -286,11 +286,11 @@ let package = Package(
             url: "https://github.com/shumakovd/spm-test/releases/download/v1.2.7/CASMediationMintegral-7.7.7.0.zip",
             checksum: "d99a57fba1ea0753fe8f272cedfe11f32c297875429fdbf6de07e7d81dabf294"
         ),
-//        .binaryTarget(
-//            name: "CASMediationYandexAds",
-//            url: "https://github.com/shumakovd/spm-test/releases/download/v1.2.7/CASMediationYandexAds-7.12.1.0.zip",
-//            checksum: "464ef13b09feb5accd5db99016982cd351e5b05a3276b4bf35b01806548fe4a9"
-//        ),
+        .binaryTarget(
+            name: "CASMediationYandexAds",
+            url: "https://github.com/shumakovd/spm-test/releases/download/v1.2.7/CASMediationYandexAds-7.12.1.0.zip",
+            checksum: "464ef13b09feb5accd5db99016982cd351e5b05a3276b4bf35b01806548fe4a9"
+        ),
         
         .binaryTarget(
             name: "CASMediationExchange",

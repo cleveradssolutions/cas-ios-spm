@@ -43,6 +43,10 @@ let package = Package(
             name: "CASMediationAudienceNetwork",
             targets: ["CASMediationAudienceNetworkTarget"]
         ),
+        .library(
+            name: "CASMediationInMobi",
+            targets: ["CASMediationInMobiTarget"]
+        ),
         
         .library(
             name: "CASMediationAppLovin",
@@ -183,7 +187,20 @@ let package = Package(
             ]
         ),
         
-        
+        .target(
+            name: "InMobiSPMTarget",
+            dependencies: [
+                .target(name: "InMobiSPM")
+            ]
+        ),
+        .target(
+            name: "CASMediationInMobiTarget",
+            dependencies: [
+                .target(name: "CASMediationInMobi"),
+                .target(name: "InMobiSPMTarget"),
+                .target(name: "CASBaseResources"),
+            ]
+        ),
         
         .target(
             name: "CASMediationAppLovinTarget",
@@ -303,22 +320,24 @@ let package = Package(
         ),
         .binaryTarget(
             name: "FBAudienceNetworkSPM",
-            
-            // url: "https://developers.facebook.com/resources/FBAudienceNetwork-6.17.1.zip"
-            // checksum: ""
-            
             url: "https://github.com/shumakovd/spm-test/releases/download/v1.3.9/FBAudienceNetwork-6.17.1.d.zip",
             checksum: "3bde7dc864c8a6598e2bcb686d25584444178f4d0c33f1bf26620fddf573fe80"
-            
-            // url: "https://github.com/shumakovd/spm-test/releases/download/v1.3.9/FBAudienceNetwork-6.17.1.s.zip",
-            // checksum: "8826493ffd633245c84e63299cec7f43af17357fc27293db34116a993b08aef4"
         ),
         .binaryTarget(
             name: "CASMediationAudienceNetwork",
             url: "https://github.com/shumakovd/spm-test/releases/download/v1.3.9/CASMediationAudienceNetwork-6.17.1.0.zip",
             checksum: "e0b447e6c4c5c993118f474f99346607ccb3d7011d324b818d5f9bc189019720"
         ),
-        
+        .binaryTarget(
+            name: "InMobiSPM",
+            url: "https://github.com/shumakovd/spm-test/releases/download/v1.3.9/InMobi-iOS-SDK-10.8.3.zip",
+            checksum: "faeeb442837927a744951511db9f5a554032e47a12a235fd8368c84496db6cf6"
+        ),
+        .binaryTarget(
+            name: "CASMediationInMobi",
+            url: "https://github.com/shumakovd/spm-test/releases/download/v1.3.9/CASMediationInMobi-10.8.2.0.zip",
+            checksum: "36e64115da94fd479160743a65c6470b1c41fec03e1874b95df2f637bae3304e"
+        ),        
         
         .binaryTarget(
             name: "CASMediationAppLovin",

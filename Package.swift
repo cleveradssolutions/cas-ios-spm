@@ -47,6 +47,10 @@ let package = Package(
             name: "CASMediationInMobi",
             targets: ["CASMediationInMobiTarget"]
         ),
+        .library(
+            name: "CASMediationDTExchange",
+            targets: ["CASMediationDTExchangeTarget"]
+        ),
         
         .library(
             name: "CASMediationAppLovin",
@@ -186,7 +190,6 @@ let package = Package(
                 .target(name: "CASBaseResources"),
             ]
         ),
-        
         .target(
             name: "InMobiSPMTarget",
             dependencies: [
@@ -198,6 +201,24 @@ let package = Package(
             dependencies: [
                 .target(name: "CASMediationInMobi"),
                 .target(name: "InMobiSPMTarget"),
+                .target(name: "CASBaseResources"),
+            ],
+            linkerSettings: [
+                .linkedFramework("WebKit"),
+                .linkedLibrary("sqlite3.0")
+            ]
+        ),
+        .target(
+            name: "DTExchangeSPMTarget",
+            dependencies: [
+                .target(name: "DTExchangeSPM")
+            ]
+        ),
+        .target(
+            name: "CASMediationDTExchangeTarget",
+            dependencies: [
+                .target(name: "DTExchangeSPMTarget"),
+                .target(name: "CASMediationDTExchange"),
                 .target(name: "CASBaseResources"),
             ]
         ),
@@ -337,7 +358,18 @@ let package = Package(
             name: "CASMediationInMobi",
             url: "https://github.com/shumakovd/spm-test/releases/download/v1.3.9/CASMediationInMobi-10.8.2.0.zip",
             checksum: "36e64115da94fd479160743a65c6470b1c41fec03e1874b95df2f637bae3304e"
-        ),        
+        ),
+        
+        .binaryTarget(
+            name: "DTExchangeSPM",
+            url: "https://github.com/shumakovd/spm-test/releases/download/v1.3.9/IASDKCore-8.3.7.zip",
+            checksum: "05515b616c883d23a7145b2da28e0ff377310cc74f690fcc0ed90c693cda807a"
+        ),
+        .binaryTarget(
+            name: "CASMediationDTExchange",
+            url: "https://github.com/shumakovd/spm-test/releases/download/v1.3.9/CASMediationDTExchange-8.3.6.0.zip",
+            checksum: "ac2d3cb1ffbefef6078441260cf216ad7d2b8d4af959a0abd2bb7fc369c083f0"
+        ),
         
         .binaryTarget(
             name: "CASMediationAppLovin",

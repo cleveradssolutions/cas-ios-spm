@@ -362,8 +362,8 @@ let package = Package(
         
         .binaryTarget(
             name: "DTExchangeSPM",
-            url: "https://github.com/shumakovd/spm-test/releases/download/v1.3.9/IASDKCore-8.3.7.zip",
-            checksum: "05515b616c883d23a7145b2da28e0ff377310cc74f690fcc0ed90c693cda807a"
+            url: "https://github.com/shumakovd/spm-test/releases/download/v1.4.0/IASDKCore-8.3.7.zip",
+            checksum: "076a0a9ec2f8a8d239bab068e4d93cc83fc61cda45cb8381eb350ab7b9d76108"
         ),
         .binaryTarget(
             name: "CASMediationDTExchange",

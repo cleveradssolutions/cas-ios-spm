@@ -39,6 +39,10 @@ let package = Package(
             name: "CASMediationUnityAds",
             targets: ["CASMediationUnityAdsTarget"]
         ),
+        .library(
+            name: "CASMediationAudienceNetwork",
+            targets: ["CASMediationAudienceNetworkTarget"]
+        ),
         
         .library(
             name: "CASMediationAppLovin",
@@ -145,7 +149,38 @@ let package = Package(
                 .target(name: "CASBaseResources")
             ]
         ),
-
+                
+        .target(
+            name: "CASMediationAudienceNetworkSPMTarget",
+            dependency: [
+                .target(name: "FBAudienceNetworkSPM")
+            ],
+            linkerSettings: [
+                .linkedFramework("AdSupport"),
+                .linkedFramework("AudioToolbox"),
+                .linkedFramework("AVFoundation"),
+                .linkedFramework("CoreGraphics"),
+                .linkedFramework("CoreImage"),
+                .linkedFramework("CoreMedia"),
+                .linkedFramework("CoreTelephony"),
+                .linkedFramework("Foundation"),
+                .linkedFramework("QuartzCore"),
+                .linkedFramework("StoreKit"),
+                .linkedFramework("SystemConfiguration"),
+                .linkedFramework("UIKit"),
+                .linkedFramework("WebKit")
+            ]
+        ),
+        .target(
+            name: "CASMediationAudienceNetworkTarget",
+            dependencies: [
+                .target(name: "CASBaseResources"),
+                .target(name: "CASMediationAudienceNetwork"),
+                .target(name: "CASMediationAudienceNetworkSPMTarget")
+            ]
+        ),
+        
+        
         
         .target(
             name: "CASMediationAppLovinTarget",
@@ -238,8 +273,8 @@ let package = Package(
                         
         .binaryTarget(
             name: "CleverAdsSolutionsSPM",
-            url: "https://github.com/shumakovd/spm-test/releases/download/v1.3.8/CleverAdsSolutions.zip",
-            checksum: "f4be555eb65b108c9066184f36df2cc8c0903c62457e8d5ff4dda7eb989b9d3d"
+            url: "https://github.com/shumakovd/spm-test/releases/download/v1.3.9/CleverAdsSolutions-4.0.2.1.zip",
+            checksum: "1b8dd73cda9d35b04b411847d969f5c3b6d45561978f2dd0964655d52dc9e7dc"
         ),
                 
         .binaryTarget(
@@ -249,8 +284,8 @@ let package = Package(
         ),
         .binaryTarget(
             name: "CASMediationIronSource",
-            url: "https://github.com/shumakovd/spm-test/releases/download/v1.2.7/CASMediationIronSource-8.8.0.0.zip",
-            checksum: "878a9692572ea7930174454f9b32058fbb50480fc28a66190cac1a7d4affec4c"
+            url: "https://github.com/shumakovd/spm-test/releases/download/v1.3.9/CASMediationIronSource-8.8.0.0.zip",
+            checksum: "e2d7d59ad24441b2ebe870a97eccea6497336637adc68ec17e785d829bcbe62a"
         ),
         
         .binaryTarget(
@@ -260,47 +295,56 @@ let package = Package(
         ),
         .binaryTarget(
             name: "CASMediationUnityAds",
-            url: "https://github.com/shumakovd/spm-test/releases/download/v1.2.7/CASMediationUnityAds-4.14.2.0.zip",
-            checksum: "b38bf41f616b2a504080821ad7433525aa6a5b79c0981504c032c70521a9d494"
+            url: "https://github.com/shumakovd/spm-test/releases/download/v1.3.9/CASMediationUnityAds-4.14.2.0.zip",
+            checksum: "65dc10aafd25fee41ac7160cffec648ab5a7f9e89aeaa73b00b3961fe10c188a"
+        ),
+        .binaryTarget(
+            name: "FBAudienceNetworkSPM",
+            url: "https://developers.facebook.com/resources/FBAudienceNetwork-6.17.1.zip"            
+        ),
+        .binaryTarget(
+            name: "CASMediationAudienceNetwork",
+            url: "https://github.com/shumakovd/spm-test/releases/download/v1.3.9/CASMediationAudienceNetwork-6.17.1.0.zip",
+            checksum: "e0b447e6c4c5c993118f474f99346607ccb3d7011d324b818d5f9bc189019720"
         ),
         
         
         .binaryTarget(
             name: "CASMediationAppLovin",
-            url: "https://github.com/shumakovd/spm-test/releases/download/v1.2.7/CASMediationAppLovin-13.2.0.0.zip",
-            checksum: "408c9335aca008c86ce432eae976604881974f2505e718061b2f69912c3b0a76"
+            url: "https://github.com/shumakovd/spm-test/releases/download/v1.3.9/CASMediationAppLovin-13.2.0.0.zip",
+            checksum: "28f5451630c120eaf6e2d10d87924b17f9317dcd20f0a858102570f904c83414"
         ),
         .binaryTarget(
             name: "CASMediationGoogleAds",
-            url: "https://github.com/shumakovd/spm-test/releases/download/v1.2.7/CASMediationGoogleAds-12.3.0.0.zip",
-            checksum: "8839f83411ae8ab87fbdf4a699f6873a28b0b42ed502a9675baab42e13c547a2"
+            url: "https://github.com/shumakovd/spm-test/releases/download/v1.3.9/CASMediationGoogleAds-12.3.0.0.zip",
+            checksum: "e8bee8ef3294f6eb691efa74ff0c2e8911dd00ea18d65c928967f1dac89a4073"
         ),
         .binaryTarget(
             name: "CASMediationVungle",
-            url: "https://github.com/shumakovd/spm-test/releases/download/v1.2.7/CASMediationLiftoffMonetize-7.5.0.0.zip",
-            checksum: "cdba86a2c6087dcba164c3099d0e0b88768c97c4d9722ed7acfada97cff31c1c"
+            url: "https://github.com/shumakovd/spm-test/releases/download/v1.3.9/CASMediationLiftoffMonetize-7.5.0.0.zip",
+            checksum: "9d73620b7f37a5e4aba51feb5366fdaa0713c3178f6e3f43740cdd7f53734f02"
         ),
         
         .binaryTarget(
             name: "CASMediationStartIO",
-            url: "https://github.com/shumakovd/spm-test/releases/download/v1.2.7/CASMediationStartIO-4.10.5.0.zip",
-            checksum: "0df6facd8e55a3c35e19b3e4235fee0b4a8ec201b15d7a721ef83d408ec11065"
+            url: "https://github.com/shumakovd/spm-test/releases/download/v1.3.9/CASMediationStartIO-4.10.5.0.zip",
+            checksum: "65b8b61967b31f911c0378f9dde1a9950380ada2e744016499ede8810fd519b5"
         ),
         .binaryTarget(
             name: "CASMediationMintegral",
-            url: "https://github.com/shumakovd/spm-test/releases/download/v1.2.7/CASMediationMintegral-7.7.7.0.zip",
-            checksum: "d99a57fba1ea0753fe8f272cedfe11f32c297875429fdbf6de07e7d81dabf294"
+            url: "https://github.com/shumakovd/spm-test/releases/download/v1.3.9/CASMediationMintegral-7.7.7.0.zip",
+            checksum: "f77a5b71727563cdfb2f58c061b9b272840e128cfc376c93aabc4cd6b206fa40"
         ),
      
         .binaryTarget(
             name: "CASMediationExchange",
-            url: "https://github.com/shumakovd/spm-test/releases/download/v1.2.7/CASMediationExchange-4.0.2.0.zip",
-            checksum: "cceaac922a8945850888c5e4f605a0a319cb06c95f7a8d20fec1cd1dddffa102"
+            url: "https://github.com/shumakovd/spm-test/releases/download/v1.3.9/CASMediationExchange-4.0.2.0.zip",
+            checksum: "b8870a26bc4e6884872039c3d4e1b8258a2739330078c8d28c1806c3293a3e1a"
         ),
         .binaryTarget(
             name: "CASMediationCrossPromo",
-            url: "https://github.com/shumakovd/spm-test/releases/download/v1.3.8/CASMediationCrossPromo-4.0.2.0.zip",
-            checksum: "276d7320a076d28f2113842f7a247bb2632d9018a3194874775fbf9076c957c8"
+            url: "https://github.com/shumakovd/spm-test/releases/download/v1.3.9/CASMediationCrossPromo-4.0.2.0.zip",
+            checksum: "a35bf1503a571a67bcb70d093a923535b29c3afedf7de605540ead09b6164913"
         )
     ]
 )

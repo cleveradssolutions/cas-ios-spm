@@ -151,8 +151,8 @@ let package = Package(
         ),
                 
         .target(
-            name: "CASMediationAudienceNetworkSPMTarget",
-            dependency: [
+            name: "FBAudienceNetworkSPMTarget",
+            dependencies: [
                 .target(name: "FBAudienceNetworkSPM")
             ],
             linkerSettings: [
@@ -168,15 +168,18 @@ let package = Package(
                 .linkedFramework("StoreKit"),
                 .linkedFramework("SystemConfiguration"),
                 .linkedFramework("UIKit"),
-                .linkedFramework("WebKit")
+                .linkedFramework("WebKit"),
+                .linkedLibrary("c++"),
+                .linkedLibrary("xml2"),
+                .linkedLibrary("z")
             ]
         ),
         .target(
             name: "CASMediationAudienceNetworkTarget",
             dependencies: [
-                .target(name: "CASBaseResources"),
                 .target(name: "CASMediationAudienceNetwork"),
-                .target(name: "CASMediationAudienceNetworkSPMTarget")
+                .target(name: "FBAudienceNetworkSPMTarget"),
+                .target(name: "CASBaseResources"),
             ]
         ),
         
@@ -300,7 +303,15 @@ let package = Package(
         ),
         .binaryTarget(
             name: "FBAudienceNetworkSPM",
-            url: "https://developers.facebook.com/resources/FBAudienceNetwork-6.17.1.zip"            
+            
+            // url: "https://developers.facebook.com/resources/FBAudienceNetwork-6.17.1.zip"
+            // checksum: ""
+            
+            url: "https://github.com/shumakovd/spm-test/releases/download/v1.3.9/FBAudienceNetwork-6.17.1.d.zip",
+            checksum: "3bde7dc864c8a6598e2bcb686d25584444178f4d0c33f1bf26620fddf573fe80"
+            
+            // url: "https://github.com/shumakovd/spm-test/releases/download/v1.3.9/FBAudienceNetwork-6.17.1.s.zip",
+            // checksum: "8826493ffd633245c84e63299cec7f43af17357fc27293db34116a993b08aef4"
         ),
         .binaryTarget(
             name: "CASMediationAudienceNetwork",

@@ -101,7 +101,7 @@ let package = Package(
         .package(url: "https://github.com/Mintegral-official/MintegralAdSDK-Swift-Package", exact: "7.7.7"),
         .package(url: "https://github.com/AppLovin/AppLovin-MAX-Swift-Package", exact: "13.2.0"),
         .package(url: "https://github.com/divkit/divkit-ios-facade", exact: "4.6.1"),
-        .package(url: "https://github.com/appmetrica/appmetrica-sdk-ios", exact: "6.0.0"),
+        .package(url: "https://github.com/appmetrica/appmetrica-sdk-ios", "5.10.0"..<"6.0.0"),
         .package(url: "https://github.com/StartApp-SDK/StartAppSDK-SwiftPackage", exact: "4.10.5"),
     ],
     

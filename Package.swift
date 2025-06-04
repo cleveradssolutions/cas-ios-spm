@@ -80,18 +80,28 @@ let package = Package(
         ),
         
         .library(
+            name: "CASMediationInMobi",
+            targets: ["CASMediationInMobiTarget"]
+        ),
+        
+        .library(
             name: "CASMediationYandexAds",
             targets: ["CASMediationYandexAdsTarget"]
+        ),
+        
+        .library(
+            name: "CASMediationYsoNetwork",
+            targets: ["CASMediationYsoNetworkTarget"]
         )
     ],
     
     dependencies: [
-        .package(url: "https://github.com/appmetrica/appmetrica-sdk-ios", "5.10.0"..<"6.0.0"),
-        .package(url: "https://github.com/divkit/divkit-ios-facade", exact: "4.6.1"),
         .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads", exact: "12.3.0"),
         .package(url: "https://github.com/Vungle/VungleAdsSDK-SwiftPackageManager", exact: "7.4.5"),
         .package(url: "https://github.com/Mintegral-official/MintegralAdSDK-Swift-Package", exact: "7.7.7"),
         .package(url: "https://github.com/AppLovin/AppLovin-MAX-Swift-Package", exact: "13.2.0"),
+        .package(url: "https://github.com/divkit/divkit-ios-facade", exact: "4.6.1"),
+        .package(url: "https://github.com/appmetrica/appmetrica-sdk-ios", exact: "6.0.0"),
         .package(url: "https://github.com/StartApp-SDK/StartAppSDK-SwiftPackage", exact: "4.10.5"),
     ],
     
@@ -264,6 +274,23 @@ let package = Package(
         ),
         
         .target(
+            name: "InMobiSPMTarget",
+            dependencies: [
+                .target(name: "InMobiSPM")
+            ],
+            path: "SPMSources/InMobiSPMTarget"
+        ),
+        .target(
+            name: "CASMediationInMobiTarget",
+            dependencies: [
+                .target(name: "InMobiSPMTarget"),
+                .target(name: "CASMediationInMobi"),
+                .target(name: "CASBaseResources")
+            ],
+            path: "SPMSources/CASMediationInMobiTarget"
+        ),
+        
+        .target(
             name: "CASBaseResources",
             dependencies: [
                 .target(name: "CleverAdsSolutionsSPM"),
@@ -329,7 +356,24 @@ let package = Package(
                 .linkedFramework("WebKit")
             ]
         ),
-     
+                                
+        .target(
+            name: "YsoNetworkSPMTarget",
+            dependencies: [
+                .target(name: "YsoNetworkSPM")
+            ],
+            path: "SPMSources/YsoNetworkSPMTarget"
+        ),
+        .target(
+            name: "CASMediationYsoNetworkTarget",
+            dependencies: [
+                .target(name: "YsoNetworkSPMTarget"),
+                .target(name: "CASMediationYsoNetwork"),
+                .target(name: "CASBaseResources")
+            ],
+            path: "SPMSources/CASMediationYsoNetworkTarget"
+        ),
+                        
         .target(
             name: "CASMediationYandexAdsTarget",
             dependencies: [
@@ -427,6 +471,16 @@ let package = Package(
             url: "https://github.com/cleveradssolutions/cas-ios-spm/releases/download/v1.0.0/CASMediationCrossPromo-4.0.2.0.zip",
             checksum: "a35bf1503a571a67bcb70d093a923535b29c3afedf7de605540ead09b6164913"
         ),
+        .binaryTarget(
+            name: "InMobiSPM",
+            url: "https://dl.inmobi.com/inmobi-sdk/IM/InMobi-iOS-SDK-10.8.2.zip",
+            checksum: "49de08f1913ca9a9193cf84964ccad1475e7dc5fd00dc4a9e050219e80d48b6b"
+        ),
+        .binaryTarget(
+            name: "CASMediationInMobi",
+            url: "https://github.com/cleveradssolutions/cas-ios-spm/releases/download/v1.0.0/CASMediationInMobi-10.8.2.0.zip",
+            checksum: "36e64115da94fd479160743a65c6470b1c41fec03e1874b95df2f637bae3304e"
+        ),
         
         .binaryTarget(
             name: "YandexAdsSPM",
@@ -437,6 +491,16 @@ let package = Package(
             name: "CASMediationYandexAds",
             url: "https://github.com/cleveradssolutions/cas-ios-spm/releases/download/v1.0.0/CASMediationYandexAds-7.12.1.0.zip",
             checksum: "b45e29db5dac0970697bffd3f51e54ac01dea1c4ce9e24843525d6a500063c04"
+        ),
+        .binaryTarget(
+            name: "YsoNetworkSPM",
+            url: "https://bitbucket.org/ysocorp/ysonetwork-ios-sdk/get/794e6daf0ed2dc2f237714f4e86d24de7a888a63.zip",
+            checksum: "237087e30b6382f0ff11b53b2c892f213d0fb34e6bf5aec3810316a3728dc978"
+        ),
+        .binaryTarget(
+            name: "CASMediationYsoNetwork",
+            url: "https://github.com/cleveradssolutions/cas-ios-spm/releases/download/v1.0.0/CASMediationYsoNetwork-1.1.31.0.zip",
+            checksum: "719b5a6f93ba1a54880fcb63288b1f460b09e64752eda7c4f40e1219bfd2793a"
         )
     ]
 )

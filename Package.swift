@@ -268,7 +268,7 @@ let package = Package(
             dependencies: [
                 .target(name: "CleverAdsSolutionsSPM"),
             ],
-            path: "SPMResources/CASBaseResources",
+            path: "SPMSources/CASBaseResources",
             resources: [
                 .process("Resources")
             ],
@@ -288,7 +288,7 @@ let package = Package(
                 .target(name: "CASMediationCrossPromo"),
                 .target(name: "CASBaseResources")
             ],
-            path: "SPMResources/CASPromoResources",
+            path: "SPMSources/CASPromoResources",
             resources: [
                 .process("Resources")
             ]

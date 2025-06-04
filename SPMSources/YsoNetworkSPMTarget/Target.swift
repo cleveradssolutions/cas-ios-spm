@@ -1,4 +1,4 @@
 //
-//  Traget.swift
+//  Target.swift
 //  CleverAdsSolutions
 //

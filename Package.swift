@@ -71,6 +71,11 @@ let package = Package(
         ),
         
         .library(
+            name: "CASMediationDTExchange",
+            targets: ["CASMediationDTExchangeTarget"]
+        ),
+        
+        .library(
             name: "CASMediationExchange",
             targets: ["CASMediationExchangeTarget"]
         ),
@@ -254,6 +259,23 @@ let package = Package(
             ],
             path: "SPMSources/CASMediationMintegralTarget"
         ),
+        
+        .target(
+            name: "DTExchangeSPMTarget",
+            dependencies: [
+                .target(name: "DTExchangeSPM")
+            ],
+            path: "SPMSources/DTExchangeSPMTarget"
+        ),
+        .target(
+            name: "CASMediationDTExchangeTarget",
+            dependencies: [
+                .target(name: "DTExchangeSPMTarget"),
+                .target(name: "CASMediationDTExchange"),
+                .target(name: "CASBaseResources")
+            ],
+            path: "SPMSources/CASMediationDTExchangeTarget"
+        ),
     
         .target(
             name: "CASMediationExchangeTarget",
@@ -278,7 +300,11 @@ let package = Package(
             dependencies: [
                 .target(name: "InMobiSPM")
             ],
-            path: "SPMSources/InMobiSPMTarget"
+            path: "SPMSources/InMobiSPMTarget",
+            linkerSettings: [
+                .linkedLibrary("sqlite3.0"),
+                .linkedFramework("WebKit")
+            ]
         ),
         .target(
             name: "CASMediationInMobiTarget",
@@ -460,7 +486,16 @@ let package = Package(
             url: "https://github.com/cleveradssolutions/cas-ios-spm/releases/download/v1.0.0/CASMediationMintegral-7.7.7.0.zip",
             checksum: "f77a5b71727563cdfb2f58c061b9b272840e128cfc376c93aabc4cd6b206fa40"
         ),
-     
+        .binaryTarget(
+            name: "DTExchangeSPM",
+            url: "https://github.com/inner-active/InneractiveAdSDK-iOS/archive/refs/heads/8.3.7.zip",
+            checksum: "bbf3ec0949f89c5b4a7922c4584417293bf56e8489725118a757d3e5dea0fe8a"
+        ),
+        .binaryTarget(
+            name: "CASMediationDTExchange",
+            url: "https://github.com/cleveradssolutions/cas-ios-spm/releases/download/v1.0.0/CASMediationDTExchange-8.3.6.0.zip",
+            checksum: "ac2d3cb1ffbefef6078441260cf216ad7d2b8d4af959a0abd2bb7fc369c083f0"
+        ),
         .binaryTarget(
             name: "CASMediationExchange",
             url: "https://github.com/cleveradssolutions/cas-ios-spm/releases/download/v1.0.0/CASMediationExchange-4.0.2.0.zip",

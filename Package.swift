@@ -3,23 +3,52 @@
 
 import PackageDescription
 
-// Integration of some SDKs (e.g. IronSource, UnityAds) is not done through ready-made SPM packages,
-// but using .zip archives from official GitHub repositories.
+// Integration of some SDKs (e.g. IronSource, UnityAds, HyprMX, Kidoz, DTExchange, InMobi, YandexAds, YsoNetwork)
+// is not done through ready-made SPM packages, but using .zip archives from official sources.
 // Below are the links to the sources used to configure binaryTarget:
 //
 // - IronSource:
-// The SDK archive was taken from the official repository:
-// https://github.com/ironsource-mobile/iOS-sdk/tree/master/8.8.0
-// Archive: IronSource8.8.0.zip
+//   Taken from the official GitHub repository:
+//   https://github.com/ironsource-mobile/iOS-sdk/tree/master/8.8.0
+//   Archive: IronSource8.8.0.zip
 //
 // - UnityAds:
-// The SDK archive was taken from the official GitHub Releases:
-// https://github.com/Unity-Technologies/unity-ads-ios/releases
-// Specific release: https://github.com/Unity-Technologies/unity-ads-ios/releases/tag/4.14.2
-// Archive: UnityAds.zip
+//   Taken from official GitHub Releases:
+//   https://github.com/Unity-Technologies/unity-ads-ios/releases/tag/4.14.2
+//   Archive: UnityAds.zip
 //
-// These archives were downloaded and used in `binaryTarget` as allowed by Swift Package Manager.
+// - HyprMX:
+//   Available from official site:
+//   https://www.hyprmx.com
+//   Archive: HyprMX.zip
 //
+// - Kidoz:
+//   Available from official site:
+//   https://www.kidoz.net
+//   Archive: KidozSDK.zip
+//
+// - DTExchange (Digital Turbine):
+//   Available from official site:
+//   https://www.digitalturbine.com
+//   Archive: DTExchangeSDK.zip
+//
+// - InMobi:
+//   Available from official site:
+//   https://www.inmobi.com/sdk
+//   Archive: InMobiSDK.zip
+//
+// - Yandex Ads:
+//   Available from official GitHub repo (releases section):
+//   https://github.com/yandexmobile/yandex-ads-sdk-ios/releases
+//   Archive: YandexMobileAds.zip
+//
+// - YsoNetwork:
+//   SDK distributed privately (contact required): https://www.ysonetwork.com
+//   Archive: YsoNetworkSDK.zip
+//
+// These archives were downloaded manually and added to the project using `binaryTarget`
+// as allowed by Swift Package Manager.
+
 
 let package = Package(
     name: "CleverAdsSolutions",
